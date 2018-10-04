@@ -1,0 +1,33 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.5rem 1rem;
+  text-align: center;
+  a, h1, h2, h3, h4, p {
+    border: 1px solid #7E99AD;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 2px;
+    padding: 0.5rem 1rem;
+    background: inherit;
+    color: #7E99AD;
+    transition: $base-in-timing $base-in-duration;
+    &:hover {
+      background: #7E99AD;
+      border: 1px solid $sec-font-color;
+      color: $sec-font-color;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+.activeButton {
+  a,h2,h3,h4 {
+    background: inherit;
+    border: 1px solid transparent;
+    color:#7E99AD;
+  }
+}

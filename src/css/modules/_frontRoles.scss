@@ -1,0 +1,39 @@
+.frontRoles {
+  min-height: 100%;
+  padding-right: 25%;
+  .frontRolesListWrapper{
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    @media screen and (max-width: 768px) {
+      font-size: 70%;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-content: center;
+    }
+    section {
+      padding-bottom: 1rem;
+      flex: 0 1 auto;
+      @media screen and (max-width: 768px) {
+      }
+      h5,h6, p {
+        color: white;
+        margin: 0;
+        line-height: 1;
+      }
+    }
+  }
+  .frontRolesFullListWrapper {
+    flex-direction: row;
+    justify-content: center;
+    @media screen and (max-width: 768px) {
+      font-size: 70%;
+      flex-direction: row;
+      justify-content: center;
+      align-content: space-around;
+    }
+  }
+}
