@@ -93,6 +93,12 @@ $blog-width: 768px;
     padding: $mobile-padding-y $mobile-padding-x;
   }
 }
+.basePadFullMobile {
+  @extend .basePad;
+  @media screen and (max-width: 768px){
+    padding: 0;
+  }
+}
 .blogPost {
   width: $blog-width;
   @media screen and (max-width: 768px) {

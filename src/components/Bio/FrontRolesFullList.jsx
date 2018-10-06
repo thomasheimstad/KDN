@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 const FrontRolesFullList = (props) => (
     <Fragment>
       <div className="flex column frontRolesListWrapper frontRolesFullListWrapper basePad" style={{ alignContent: 'center'}}>

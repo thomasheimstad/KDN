@@ -4,7 +4,7 @@
   "version": "1.1.0",
   "author": "Thomas Heimstad",
   "dependencies": {
-    "gatsby": "2.0.0",
+    "gatsby": "^2.0.0",
     "gatsby-image": "^2.0.6",
     "gatsby-plugin-catch-links": "2.0.2",
     "gatsby-plugin-feed": "2.0.5",
@@ -72,6 +72,7 @@
     "build:pp": "gatsby build --prefix-paths",
     "build:gh": "npm run clean && npm run build:pp && gh-pages -d public",
     "clean": "rm -rf public && rm -rf .cache",
+    "cleanWin10": "del -s public && rm -rf .cache",
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:md": "remark content/posts/",
     "write-good": "write-good $(glob 'content/posts/**/*.md')",

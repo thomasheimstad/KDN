@@ -3,7 +3,7 @@
 
 html {
   @if $typl8-custom-font {
-    font: $typl8-font-weight #{$typl8-font-size + "%"}/#{$typl8-line-height} $typl8-custom-font, $typl8-font-family;
+    font: $typl8-font-weight #{$typl8-font-size + "%"}/#{$typl8-line-height} $typl8-custom-alt-font, $typl8-font-family;
   } @else {
     font: $typl8-font-weight #{$typl8-font-size + "%"}/#{$typl8-line-height} $typl8-font-family;
   }

@@ -1,7 +1,8 @@
 import React from 'react';
-const EngBio = () => {
+
+const EngBio = (props) => {
   return (
-    <div id="en">
+    <div id="en" className="flex center column basePad">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor consequat id porta nibh venenatis cras. Nunc consequat interdum varius sit amet mattis vulputate enim nulla. Sed odio morbi quis commodo odio aenean sed adipiscing diam. Ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget gravida. Nullam eget felis eget nunc lobortis mattis aliquam faucibus. Amet volutpat consequat mauris nunc congue. Nunc vel risus commodo viverra maecenas. Non odio euismod lacinia at quis risus. Risus at ultrices mi tempus. Nulla aliquet porttitor lacus luctus accumsan. Risus nullam eget felis eget nunc. Scelerisque purus semper eget duis at tellus at. Nullam eget felis eget nunc lobortis mattis.</p>
 
       <p>Eu feugiat pretium nibh ipsum consequat nisl. Massa id neque aliquam vestibulum. Nunc mi ipsum faucibus vitae. Sit amet massa vitae tortor condimentum. Sem fringilla ut morbi tincidunt augue interdum velit. Nunc scelerisque viverra mauris in aliquam sem fringilla ut. Amet purus gravida quis blandit turpis cursus in hac habitasse. Facilisis volutpat est velit egestas dui. Diam quis enim lobortis scelerisque fermentum. Aliquet risus feugiat in ante metus. Sollicitudin aliquam ultrices sagittis orci. Sit amet aliquam id diam maecenas ultricies. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis.</p>

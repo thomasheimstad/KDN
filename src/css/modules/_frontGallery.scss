@@ -1,4 +1,5 @@
 .image-gallery-content:not(.fullscreen) {
+  overflow: hidden;
   .image-gallery-slide {
     background: black;
     overflow: hidden;
@@ -10,15 +11,24 @@
     min-height: 100vh;
     max-height: 100vh;
      img {
-        height: 100%;
-        max-height: 100vh;
-        width: auto;
-        @media screen and (max-width: 768px) {
-          height: 50%;
-          max-height: 50vh;
-        }
-     }
-   }
+      height: 100%;
+      max-height: 100vh;
+      width: auto;
+      @media screen and (max-width: 768px) {
+        height: 50%;
+        max-height: 50vh;
+      }
+    }
+  }
+}
+#frontGallery {
+  a {
+    color: white;
+    transition: $base-in-timing $base-in-duration;
+    &:hover {
+      color: darken($sec-font-color, 15%);
+    }
+  }
 }
 .fullscreen {
   .image-gallery-fullscreen-button {
@@ -33,5 +43,5 @@
    }
 }
 .image-gallery-fullscreen-button:hover::before, .image-gallery-play-button:hover::before, .image-gallery-left-nav:hover::before, .image-gallery-right-nav:hover::before {
- color: $lightpurple;
+ color: $sec-font-color;
 }

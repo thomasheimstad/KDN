@@ -13,9 +13,9 @@
     margin: 0;
     font-weight: 700;
     line-height: 1;
-    color: $sec-font-color;
+    color: $gray2;
     &:hover {
-      color: $gray;
+      color: $sec-font-color;
     }
   }
 }
@@ -27,12 +27,16 @@
     transition: 0.225s ease-in;
     margin: 0;
     font-weight: 700;
-    line-height: 1;
-    font-size: 150%;
-    padding: 1rem 0;
-    color: $sec-font-color;
+    line-height: 0;
+    font-size: 130%;
+    padding: $base-padding-y/2 0.3rem;
+    color: $gray2;
     &:hover {
-      color: $gray;
+      color: $sec-font-color;
+    }
+    @media screen and (max-width: 768px){
+      padding: $mobile-padding-y/2 0.3rem;
+      font-size: 90%;
     }
   }
 }
