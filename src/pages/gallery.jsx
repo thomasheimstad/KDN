@@ -56,7 +56,7 @@ export default class Gallery extends React.Component {
     const images = [...this.state.imageArray]
     return (
       <Layout location={this.props.location}>
-         <div id="frontGallery" style={{height: '100%'}}>
+         <div id="frontGallery" style={{position: 'relative'}}>
            <ImageGallery
              items={images}
              showThumbnails={false}
@@ -64,23 +64,23 @@ export default class Gallery extends React.Component {
              slideDuration={225}
              onSlide={this.handleImageLoad}
            />
+           <a
+             id="downloadImageButton"
+             href={this.state.imageSrc}
+             download={`Kari Dahl Nielsen ${this.state.imageIndex+1}.jpg`}
+             onClick={this.consoleLogMe}
+             style={{
+               position: 'absolute',
+               bottom: '0',
+               left: '0',
+               right: '0',
+               marginLeft: '0.5rem',
+               marginRight: 'auto',
+               width: '42px',
+             }}>
+             <MdFileDownload className="iconz" size={32} />
+           </a>
          </div>
-         <a
-           id="downloadImageButton"
-           href={this.state.imageSrc}
-           download={`Kari Dahl Nielsen ${this.state.imageIndex+1}.jpg`}
-           onClick={this.consoleLogMe}
-           style={{
-             position: 'absolute',
-             bottom: '0',
-             left: '0',
-             right: '0',
-             marginLeft: '0.5rem',
-             marginRight: 'auto',
-             width: '42px',
-           }}>
-           <MdFileDownload className="iconz" size={42} />
-         </a>
        </Layout>
      )
   }

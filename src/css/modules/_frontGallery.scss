@@ -24,13 +24,13 @@
   }
 }
 #downloadImageButton {
-  display: block;
   color: $base-font-color;
   transition: $base-in-timing $base-in-duration;
   &:hover {
     color: darken($sec-font-color, 15);
   }
 }
+
 .fullscreen {
   .image-gallery-fullscreen-button {
     position: fixed;
