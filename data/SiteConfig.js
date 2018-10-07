@@ -3,7 +3,7 @@ module.exports = {
   siteTitleShort: "KDN Mezzo", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: "Homepage Mezzosoprano Kari Dahl Nielsen", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
-  siteUrl: "localhost:8000", // Domain of your website without pathPrefix.
+  siteUrl: "", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: "The homepage of mezzosoprano Kari Dahl Nielsen", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
