@@ -7,7 +7,7 @@ const Home = (props) => (
       query {
         file(relativePath: { regex: "/kari/" }) {
           childImageSharp {
-            fluid(maxWidth: 1920, quality: 90) {
+            fluid(maxWidth: 1920, quality: 50) {
               ...GatsbyImageSharpFluid
             }
           }
