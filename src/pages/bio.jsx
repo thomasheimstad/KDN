@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 import config from '../../data/SiteConfig';
 import {graphql} from 'gatsby';
-import HeroImg from "../components/modules/HeroImg";
+import HeroImg from '../components/modules/HeroImg';
 import {FaInstagram, FaFacebookSquare} from 'react-icons/fa';
-import Layout from "../components/layout";
+import Layout from '../components/layout';
 import Helmet from 'react-helmet';
 import SEO from '../components/SEO/SEO';
-import EngBio from "../components/bio/EngBio";
-import NorBio from "../components/bio/NorBio";
+import EngBio from '../components/bio/EngBio';
+import NorBio from '../components/bio/NorBio';
 
 export default class Bio extends React.Component {
   state = {

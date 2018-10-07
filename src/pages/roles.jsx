@@ -1,11 +1,11 @@
 import React from 'react';
-import { StaticQuery, graphql } from "gatsby";
-import HeroImg from "../components/modules/HeroImg";
+import { StaticQuery, graphql } from 'gatsby';
+import HeroImg from '../components/modules/HeroImg';
 import config from '../../data/SiteConfig';
-import Layout from "../components/layout";
+import Layout from '../components/layout';
 import Helmet from 'react-helmet';
 import SEO from '../components/SEO/SEO';
-import RolesList from "../components/bio/RolesList";
+import RolesList from '../components/bio/RolesList';
 export default class Roles extends React.Component {
   render = () => {
     let props = this.props;
