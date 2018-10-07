@@ -47,9 +47,6 @@
 .image-gallery-fullscreen-button::before{
   color: $base-font-color;
 }
-.image-gallery-fullscreen-button {
-  margin-bottom: 0
-}
 .image-gallery-fullscreen-button:hover::before, .image-gallery-play-button:hover::before, .image-gallery-left-nav:hover::before, .image-gallery-right-nav:hover::before {
  color: $sec-font-color;
  border: 0;
