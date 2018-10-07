@@ -1,31 +1,23 @@
 import React from 'react';
 import { StaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import HeroImg from "../components/modules/HeroImg";
 import config from '../../data/SiteConfig';
 import Layout from "../components/layout";
 import Helmet from 'react-helmet';
 import SEO from '../components/SEO/SEO';
-import FrontRolesFullList from "../components/bio/FrontRolesFullList";
+import RolesList from "../components/bio/RolesList";
 export default class Roles extends React.Component {
-  state = {
-    fullList: false
-  }
-  handleClick = () => {
-    this.setState({
-      fullList: !this.state.fullList
-    })
-  }
   render = () => {
     let props = this.props;
     return (
       <StaticQuery
         query={graphql`
           query {
-            file(relativePath: { regex: "/KariRightRight/" }) {
+            file(relativePath: { regex: "/KariE/" }) {
               childImageSharp {
                 # Specify the image processing specifications right in the query.
                 # Makes it trivial to update as your page's design changes.
-                fluid(maxWidth: 1920, quality: 90) {
+                fluid(maxWidth: 1920, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -38,24 +30,9 @@ export default class Roles extends React.Component {
              <title>{`ROLES | ${config.siteTitle}`}</title>
            </Helmet>
            <SEO />
-           <div id="frontRoles" className="frontRoles flex center">
-             <Img
-             fluid={data.file.childImageSharp.fluid}
-             style={{
-              position: 'absolute',
-              left: 0,
-              top: 0,
-              width: "100%",
-              height: "100%",
-              zIndex: "-1",
-              background: 'black'
-             }}
-             imgStyle={{
-              objectPosition: '80% 0',
-              opacity: '1'
-             }}
-             />
-             <FrontRolesFullList />
+           <div id="frontRoles" className="frontBio frontRoles flex center column basePadFullMobile">
+             <HeroImg fluid={data.file.childImageSharp.fluid} posY="80%" posX='30%' divider="1.66"/>
+             <RolesList />
            </div>
          </Layout>
        )}

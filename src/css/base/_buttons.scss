@@ -5,16 +5,16 @@
   margin: 0 0.5rem 1rem;
   text-align: center;
   a, h1, h2, h3, h4, p {
-    border: 1px solid #7E99AD;
+    border: 1px solid $sec-font-color;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 2px;
     padding: 0.5rem 1rem;
     background: inherit;
-    color: #7E99AD;
+    color: $sec-font-color;
     transition: $base-in-timing $base-in-duration;
     &:hover {
-      background: #7E99AD;
+      background: $action-color;
       border: 1px solid $sec-font-color;
       color: $sec-font-color;
     }
@@ -28,6 +28,6 @@
   a,h2,h3,h4 {
     background: inherit;
     border: 1px solid transparent;
-    color:#7E99AD;
+    color:$action-color;
   }
 }

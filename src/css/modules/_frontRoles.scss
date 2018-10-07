@@ -1,39 +1,42 @@
 .frontRoles {
-  min-height: 100%;
-  padding-right: 25%;
   .frontRolesListWrapper{
+    flex-flow: row;
     flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
-    align-items: center;
+    flex-direction: row;
     width: 100%;
     @media screen and (max-width: 768px) {
       font-size: 70%;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-content: center;
+      flex-wrap: nowrap;
+      flex-direction: column;
     }
     section {
-      padding-bottom: 1rem;
-      flex: 0 1 auto;
+      flex: 1 1 auto;
+      margin: 0;
+      align-items: center;
+      justify-content: space-around;
+      padding: 4rem 2rem;
+      background: $averagepurple;
+      margin: 0.2rem;
       @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0.5rem 0;
+        padding: 2rem;
+      }
+      div {
+        flex: 0 1 auto;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 0 1rem;
       }
       h5,h6, p {
-        color: white;
+        color: $white;
         margin: 0;
-        line-height: 1;
+        line-height: 1.2;
       }
-    }
-  }
-  .frontRolesFullListWrapper {
-    flex-direction: row;
-    justify-content: center;
-    @media screen and (max-width: 768px) {
-      font-size: 70%;
-      flex-direction: row;
-      justify-content: center;
-      align-content: space-around;
+      h6 {
+        color: $sec-font-color;
+      }
     }
   }
 }

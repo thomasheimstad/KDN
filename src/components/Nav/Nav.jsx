@@ -4,9 +4,6 @@ import {Link} from 'gatsby';
 const Nav = (props) => {
   return(
     <div className={props.home ? "homeNav flex column" : "nav flex row center"}>
-      {/* {props.home ? null :
-
-      */}
       <Link exact='true' to="/" activeClassName="activeNav">
         <h3>KARI</h3>
       </Link>
@@ -19,6 +16,10 @@ const Nav = (props) => {
       <Link to="gallery" activeClassName="activeNav">
         <h3>IMAGES</h3>
       </Link>
+      {props.home ?
+        <p>kari.dahl.nielsen@gmail.com</p>
+      : null
+      }
     </div>
 
   )

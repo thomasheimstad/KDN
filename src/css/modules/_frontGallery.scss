@@ -1,7 +1,7 @@
 .image-gallery-content:not(.fullscreen) {
   overflow: hidden;
   .image-gallery-slide {
-    background: black;
+    background: $base-background-color;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -14,16 +14,18 @@
       height: 100%;
       max-height: 100vh;
       width: auto;
+      padding: $base-padding-y $base-padding-x;
       @media screen and (max-width: 768px) {
-        height: 50%;
-        max-height: 50vh;
+        height: 100%;
+        max-height: 100vh;
+        padding: $mobile-padding-y $mobile-padding-x;
       }
     }
   }
 }
 #frontGallery {
   a {
-    color: white;
+    color: $base-font-color;
     transition: $base-in-timing $base-in-duration;
     &:hover {
       color: darken($sec-font-color, 15%);
@@ -42,6 +44,15 @@
      }
    }
 }
+.image-gallery-fullscreen-button::before{
+  color: $base-font-color;
+}
+.image-gallery-fullscreen-button {
+  margin-bottom: 0
+}
 .image-gallery-fullscreen-button:hover::before, .image-gallery-play-button:hover::before, .image-gallery-left-nav:hover::before, .image-gallery-right-nav:hover::before {
  color: $sec-font-color;
+ border: 0;
+ text-shadow: 0;
+ transform: scale(1);
 }

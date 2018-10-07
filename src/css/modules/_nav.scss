@@ -8,15 +8,20 @@
     left: 12%;
     font-size: 70%;
   }
-  h3 {
+  h3, p {
     transition: 0.225s ease-in;
     margin: 0;
+    margin-top: 0.2rem;
     font-weight: 700;
     line-height: 1;
     color: $gray2;
+    letter-spacing: 2px;
     &:hover {
       color: $sec-font-color;
     }
+  }
+  p {
+    margin-top: 5rem;
   }
 }
 .nav {
