@@ -64,7 +64,9 @@ export default class Gallery extends React.Component {
              slideDuration={225}
              onSlide={this.handleImageLoad}
            />
+         </div>
          <a
+           id="downloadImageButton"
            href={this.state.imageSrc}
            download={`Kari Dahl Nielsen ${this.state.imageIndex+1}.jpg`}
            onClick={this.consoleLogMe}
@@ -79,7 +81,6 @@ export default class Gallery extends React.Component {
            }}>
            <MdFileDownload className="iconz" size={42} />
          </a>
-         </div>
        </Layout>
      )
   }
