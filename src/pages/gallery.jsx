@@ -9,7 +9,8 @@ export default class Gallery extends React.Component {
     imageArray: [],
     imageFullsizeArray: [],
     imageIndex: 0,
-    imageSrc: ''
+    imageSrc: '',
+
   }
   galleryMapper = (data) => {
     const images = [];
@@ -40,16 +41,40 @@ export default class Gallery extends React.Component {
       imageSrc: imagesFull[0].fullsize
     })
   }
-  componentDidMount = () => {
-    this.galleryMapper(this.props.data)
+  imageGalleryMapper = (data) => {
+    const images = [];
+    const imagesFull = [];
+    data.imageGallery.edges.map((x, i) => {
+      images.push({
+        'original': x.node.childMarkdownRemark.frontmatter.img.childImageSharp.fluid.src,
+        'description': x.node.childMarkdownRemark.frontmatter.copyright,
+        'originalAlt': x.node.childMarkdownRemark.frontmatter.description,
+        'originalTitle': x.node.childMarkdownRemark.frontmatter.copyright,
+        'originalImg': x.node.childMarkdownRemark.frontmatter.img.childImageSharp.fixed.src,
+        'sorting': x.node.childMarkdownRemark.frontmatter.sorting
+      })
+    })
+    images.sort(function(a, b) {
+      let textA = a.sorting;
+      let textB = b.sorting;
+      return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+    });
+    this.setState({
+      imageArray: images,
+      imageSrc: images[0].originalImg,
+      imageDescription: images[0].description
+    })
   }
-  handleClick = (ert) => {
-    console.log(ert)
+  componentDidMount = () => {
+    //this.galleryMapper(this.props.data)
+    this.imageGalleryMapper(this.props.data);
+    console.log(this.props.data)
   }
   handleImageLoad = (event) => {
     this.setState({
       imageIndex: event,
-      imageSrc: this.state.imageFullsizeArray[event].fullsize
+      imageSrc: this.state.imageArray[event].originalImg,
+      imageDescription: this.state.imageArray[event].description
     })
   }
   render = () => {
@@ -67,8 +92,7 @@ export default class Gallery extends React.Component {
            <a
              id="downloadImageButton"
              href={this.state.imageSrc}
-             download={`Kari Dahl Nielsen ${this.state.imageIndex+1}.jpg`}
-             onClick={this.consoleLogMe}
+             download={`Kari Dahl Nielsen - Photo by ${this.state.imageDescription}.jpg`}
              style={{
                position: 'absolute',
                bottom: '0',
@@ -110,6 +134,31 @@ export const query = graphql`
           childImageSharp {
             fluid(maxWidth: 6000, quality: 100) {
               originalImg
+            }
+          }
+        }
+      }
+    }
+    imageGallery: allFile(
+      filter: { internal: { mediaType: { eq: "text/markdown"}}, sourceInstanceName: { eq: "imageGallery"} }
+    ) {
+      edges {
+        node {
+          childMarkdownRemark {
+            frontmatter {
+              sorting
+              copyright
+              description
+              img {
+                childImageSharp {
+                  fluid(maxWidth: 1920, quality: 50) {
+                    ...GatsbyImageSharpFluid
+                  }
+                  fixed(width: 6000, quality: 100) {
+                    src
+                  }
+                }
+              }
             }
           }
         }

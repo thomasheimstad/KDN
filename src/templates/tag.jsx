@@ -40,7 +40,13 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
-            cover
+            img {
+              childImageSharp {
+                  fluid(maxWidth: 1920, quality: 50) {
+                    ...GatsbyImageSharpFluid
+                }
+              }
+            }
             date
           }
         }

@@ -13,7 +13,7 @@ export default class Roles extends React.Component {
       <StaticQuery
         query={graphql`
           query {
-            file(relativePath: { regex: "/KariE/" }) {
+            file(relativePath: { regex: "/KariB/" }) {
               childImageSharp {
                 # Specify the image processing specifications right in the query.
                 # Makes it trivial to update as your page's design changes.
@@ -30,7 +30,7 @@ export default class Roles extends React.Component {
              <title>{`ROLES | ${config.siteTitle}`}</title>
            </Helmet>
            <SEO />
-           <div id="frontRoles" className="frontBio frontRoles flex center column basePadFullMobile">
+           <div id="frontRoles" className="frontRoles flex center column basePadFullMobile">
              <HeroImg fluid={data.file.childImageSharp.fluid} posY="80%" posX='30%' divider="1.66"/>
              <RolesList />
            </div>

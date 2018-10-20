@@ -16,10 +16,6 @@ const Nav = (props) => {
       <Link to="gallery" activeClassName="activeNav">
         <h3>IMAGES</h3>
       </Link>
-      {props.home ?
-        <p>kari.dahl.nielsen@gmail.com</p>
-      : null
-      }
     </div>
 
   )
