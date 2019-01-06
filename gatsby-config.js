@@ -168,7 +168,13 @@ module.exports = {
                     }
                     frontmatter {
                       title
-                      cover
+                      img {
+                        childImageSharp {
+                            fluid(maxWidth: 600, quality: 50) {
+                              src
+                          }
+                        }
+                      }
                       date
                       category
                       tags
