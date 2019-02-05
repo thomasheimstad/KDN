@@ -4,7 +4,7 @@
   "version": "1.1.0",
   "author": "Thomas Heimstad",
   "dependencies": {
-    "gatsby": "^2.0.0",
+    "gatsby": "^2.0.88",
     "gatsby-image": "^2.0.6",
     "gatsby-plugin-catch-links": "2.0.2",
     "gatsby-plugin-feed": "2.0.5",

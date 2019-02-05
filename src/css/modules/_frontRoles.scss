@@ -5,12 +5,13 @@
     flex-flow: column;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 100%;
-    padding-bottom: 0;
+    max-width: 80%;
     @media screen and (max-width: 768px) {
+      max-width: 100%;
       font-size: 70%;
       flex-wrap: nowrap;
       flex-direction: column;
+      padding-bottom: $mobile-padding-y;
     }
     section {
       flex: 0 1 auto;
@@ -20,14 +21,12 @@
       justify-content: center;
       text-align: left;
       @media screen and (max-width: 768px) {
-        flex-direction: column;
-        align-items: flex-start;
         padding: 1.5rem;
       }
-      h5,h6, p {
+      h5, h6, p {
         color: $white;
         margin: 0;
-        line-height: 1.2;
+        line-height: 1;
       }
       h6 {
         color: $sec-font-color;

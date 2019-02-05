@@ -1,6 +1,7 @@
 import React from 'react';
 import {graphql} from 'gatsby';
 import ImageGallery from 'react-image-gallery';
+import GalleryImages from '../components/modules/GalleryImages';
 import Layout from '../components/layout';
 import {MdFileDownload} from 'react-icons/md';
 
@@ -82,7 +83,7 @@ export default class Gallery extends React.Component {
     return (
       <Layout location={this.props.location}>
          <div id="frontGallery" style={{position: 'relative'}}>
-           <ImageGallery
+           {/*<ImageGallery
              items={images}
              showThumbnails={false}
              showPlayButton={false}
@@ -104,6 +105,8 @@ export default class Gallery extends React.Component {
              }}>
              <MdFileDownload className="iconz" size={32} />
            </a>
+           */}
+           <GalleryImages images={images}/>
          </div>
        </Layout>
      )
