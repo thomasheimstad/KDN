@@ -34,13 +34,6 @@
     }
   }
 }
-#downloadImageButton {
-  color: lighten($base-font-color, 25%);
-  transition: $base-in-timing $base-in-duration;
-  &:hover {
-    color: lighten($base-font-color, 50%);
-  }
-}
 
 .fullscreen {
   .image-gallery-fullscreen-button {

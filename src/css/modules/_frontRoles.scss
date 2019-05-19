@@ -6,6 +6,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     max-width: 80%;
+    padding-bottom: 0;
     @media screen and (max-width: 768px) {
       max-width: 100%;
       font-size: 70%;
@@ -16,7 +17,7 @@
     section {
       flex: 0 1 auto;
       margin: 0;
-      padding: 2rem;
+      padding: 1rem;
       background: #493036;
       justify-content: center;
       text-align: left;
@@ -30,6 +31,9 @@
       }
       h6 {
         color: $sec-font-color;
+      }
+      h6:last-of-type{
+        color: $milkchocolate2;
       }
     }
   }

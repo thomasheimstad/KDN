@@ -1,9 +1,19 @@
 import React, {Fragment} from "react";
 import Helmet from "react-helmet";
-import config from "../../data/SiteConfig";
-import { Transition, Spring, animated } from 'react-spring';
+import WindowDimensionsProvider from '../components/context/WindowDimensionsProvider';
+import siteConfig from "../../data/SiteConfig";
+import { useSpring, animated, config } from 'react-spring';
 import Nav from '../components/Nav/Nav';
 import '../css/styles.scss';
+
+const AniWrapper = (props) => {
+  const contentProps = useSpring({ config: config.fast, from: { opacity: 0 }, to: { opacity: 1 } })
+  return(
+    <animated.div style={contentProps}>
+      {props.children}
+    </animated.div>
+  )
+}
 
 export default class Layout extends React.Component {
   state = {
@@ -44,48 +54,16 @@ export default class Layout extends React.Component {
     window.removeEventListener('scroll', this.handleScroll);
     window.removeEventListener('scroll', this.handleResize);
   }
-  getLocalTitle() {
-    function capitalize(string) {
-      return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-    const pathPrefix = config.pathPrefix ? config.pathPrefix : "/";
-    const currentPath = this.props.location.pathname
-      .replace(pathPrefix, "")
-      .replace("/", "");
-    let title = "";
-    if (currentPath === "") {
-      title = "Home";
-    } else if (currentPath === "tags/") {
-      title = "Tags";
-    } else if (currentPath === "categories/") {
-      title = "Categories";
-    } else if (currentPath === "about/") {
-      title = "About";
-    } else if (currentPath.indexOf("posts")) {
-      title = "Article";
-    } else if (currentPath.indexOf("tags/")) {
-      const tag = currentPath
-        .replace("tags/", "")
-        .replace("/", "")
-        .replace("-", " ");
-      title = `Tagged in ${capitalize(tag)}`;
-    } else if (currentPath.indexOf("categories/")) {
-      const category = currentPath
-        .replace("categories/", "")
-        .replace("/", "")
-        .replace("-", " ");
-      title = `${capitalize(category)}`;
-    }
-    return title;
-  }
   render() {
     const { children, location, state } = this.props;
     return (
-      <Fragment>
+      <>
+        <WindowDimensionsProvider>
         <Helmet>
-          <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
+          <title>{`${config.siteTitle} |  `}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
+        <Nav/>
           {/*<Transition>{children}</Transition>*/}
           {/*<Transition keys={location.pathname}
             from={{ opacity: 0, transform: 'translate3d(100%,0,0)' }}
@@ -96,14 +74,11 @@ export default class Layout extends React.Component {
                 {children}
               </animated.div>}
           </Transition> */}
-          <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
-            {styles => <animated.div style={{ ...styles}} className="app-wrapper">
-              {this.getLocalTitle() === "Home" ? <Nav home /> : <Nav/>}
-              {children}
-            </animated.div>}
-        </Spring>
-
-      </Fragment>
+          <AniWrapper>
+            {children}
+          </AniWrapper>
+        </WindowDimensionsProvider>
+      </>
     );
   }
 }

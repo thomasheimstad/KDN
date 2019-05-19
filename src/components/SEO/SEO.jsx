@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import urljoin from "url-join";
 import config from "../../../data/SiteConfig";
 
-class SEO extends Component {
+class Seo extends Component {
   render() {
     const { postNode, postPath, postSEO } = this.props;
     let title;
@@ -16,7 +16,13 @@ class SEO extends Component {
       description = postMeta.description
         ? postMeta.description
         : postNode.excerpt;
-      image = postMeta.img;
+      if(!(Object.hasOwnProperty(postMeta, "img"))){
+        image = ''
+      } else if(typeof(postMeta.img.childImageSharp.fluid) !== 'undefined') {
+        image = image = postMeta.img.childImageSharp.fluid.src
+      } else {
+        image = postMeta.img.childImageSharp.fixed.src;
+      }
       postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
     } else {
       title = config.siteTitle;
@@ -103,4 +109,4 @@ class SEO extends Component {
   }
 }
 
-export default SEO;
+export default Seo;

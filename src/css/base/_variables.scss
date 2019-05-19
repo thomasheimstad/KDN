@@ -53,8 +53,10 @@ $averagepurple: #402f3a;
 $action-color:  $lightpurple;
 $secondary-action-color: $beige;
 
+
 $base-font-color: #111; /*$dark-gray;*/
 $sec-font-color: $gray;
+$subtitle: lighten($base-font-color, 15%);
 
 $post-color:        $navy;
 $post-header-color: $navy;

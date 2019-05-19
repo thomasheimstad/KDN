@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+const _ = require("lodash");
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import PostListing from "../components/PostListing/PostListing";
@@ -13,7 +14,7 @@ export default class CategoryTemplate extends React.Component {
       <Layout location={this.props.location}>
         <div className="category-container">
           <Helmet
-            title={`Posts in category "${category}" | ${config.siteTitle}`}
+            title={`${_.upperFirst(category)} | ${config.siteTitle}`}
           />
           <PostListing postEdges={postEdges} />
         </div>
@@ -41,11 +42,14 @@ export const pageQuery = graphql`
           timeToRead
           frontmatter {
             title
-            tags
+            category
             img {
               childImageSharp {
-                  fluid(maxWidth: 1920, quality: 50) {
-                    ...GatsbyImageSharpFluid
+                fixed(width: 340, height: 250) {
+                  ...GatsbyImageSharpFixed
+                }
+                fluid(maxWidth: 1000) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
