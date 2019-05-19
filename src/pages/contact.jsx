@@ -6,7 +6,7 @@ import {FaFacebook} from 'react-icons/fa';
 import config from '../../data/SiteConfig';
 import Layout from "../components/layout";
 import Helmet from 'react-helmet';
-import SEO from '../components/seo/SEO';
+import Seo from '../components/seo/Seo';
 
 const Contact = (props) => (
   <StaticQuery
@@ -28,7 +28,7 @@ const Contact = (props) => (
        <Helmet>
          <title>{`CONTACT | ${config.siteTitle}`}</title>
        </Helmet>
-       <SEO />
+       <Seo />
        <div id="frontContact" className="frontHero" style={{height: '400px'}}>
          <Img
            fluid={data.file.childImageSharp.fluid}

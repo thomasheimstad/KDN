@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 import Layout from "../components/layout";
 import Nav from "../components/Nav/Nav";
-import SEO from "../components/seo/SEO";
+import Seo from "../components/seo/Seo";
 import config from "../../data/SiteConfig";
 import Home from '../components/FrontPage/Home';
 import WindowDimensionsProvider from '../components/context/WindowDimensionsProvider';
@@ -14,7 +14,7 @@ class Index extends React.Component {
       <>
         <Nav home/>
         <Helmet title={config.siteTitle} />
-        <SEO />
+        <Seo />
         <WindowDimensionsProvider>
           <Home homeImage={this.props.data.file.childImageSharp.fluid}/>
         </WindowDimensionsProvider>

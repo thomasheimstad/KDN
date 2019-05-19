@@ -4,7 +4,7 @@ import {graphql} from 'gatsby';
 import HeroImg from '../components/Modules/HeroImg';
 import Layout from '../components/layout';
 import Helmet from 'react-helmet';
-import SEO from '../components/seo/SEO';
+import Seo from '../components/seo/Seo';
 import EngBio from '../components/Bio/EngBio';
 import NorBio from '../components/Bio/NorBio';
 
@@ -23,7 +23,7 @@ export default class Bio extends React.Component {
         <Helmet>
           <title>{`Bio | ${config.siteTitle}`}</title>
         </Helmet>
-        <SEO />
+        <Seo />
         <div className="frontBio flex center column basePadFullMobile">
           <HeroImg fluid={this.props.data.file.childImageSharp.fluid} posY="50%" posX="30%" divider="1.66"/>
           <article className="flex center column basePad">

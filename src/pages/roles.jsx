@@ -4,7 +4,7 @@ import HeroImg from '../components/Modules/HeroImg';
 import config from '../../data/SiteConfig';
 import Layout from '../components/layout';
 import Helmet from 'react-helmet';
-import SEO from '../components/seo/SEO';
+import Seo from '../components/seo/Seo';
 import RolesList from '../components/Bio/RolesList';
 export default class Roles extends React.Component {
   render = () => {
@@ -29,7 +29,7 @@ export default class Roles extends React.Component {
            <Helmet>
              <title>{`Roles | ${config.siteTitle}`}</title>
            </Helmet>
-           <SEO />
+           <Seo />
            <div id="frontRoles" className="frontRoles flex center column basePadFullMobile">
              <HeroImg fluid={data.file.childImageSharp.fluid} posY="50%" posX='20%' divider="1.66"/>
              <RolesList />

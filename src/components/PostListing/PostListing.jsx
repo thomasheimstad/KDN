@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "gatsby";
-import GalleryView from './GalleryView';
 import Masonry from '../../components/masonry/Masonry';
 
 class PostListing extends React.Component {

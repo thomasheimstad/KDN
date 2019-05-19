@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 const _ = require("lodash");
 import ImageInfo from "../components/modules/ImageInfo";
-import SEO from "../components/seo/SEO";
+import Seo from "../components/seo/Seo";
 import config from "../../data/SiteConfig";
 
 export default class ImageTemplate extends React.Component {
@@ -20,7 +20,7 @@ export default class ImageTemplate extends React.Component {
     }
     return (
       <Layout>
-        <SEO postPath={slug} postNode={postNode} postSEO />
+        <Seo postPath={slug} postNode={postNode} postSEO />
         <Helmet>
           <title>{`${_.upperFirst(post.title)} | ${config.siteTitle}`}</title>
         </Helmet>
