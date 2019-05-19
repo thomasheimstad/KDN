@@ -4,7 +4,7 @@ import {graphql} from 'gatsby';
 import HeroImg from '../components/Modules/HeroImg';
 import Layout from '../components/layout';
 import Helmet from 'react-helmet';
-import Seo from '../components/seo/Seo';
+import Seo from '../components/modules/Seo';
 import EngBio from '../components/Bio/EngBio';
 import NorBio from '../components/Bio/NorBio';
 

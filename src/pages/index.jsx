@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 import Layout from "../components/layout";
 import Nav from "../components/Nav/Nav";
-import Seo from "../components/seo/Seo";
+import Seo from "../components/modules/Seo";
 import config from "../../data/SiteConfig";
 import Home from '../components/FrontPage/Home';
 import WindowDimensionsProvider from '../components/context/WindowDimensionsProvider';

@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 const _ = require("lodash");
 import ImageInfo from "../components/modules/ImageInfo";
-import Seo from "../components/seo/Seo";
+import Seo from "../components/modules/Seo";
 import config from "../../data/SiteConfig";
 
 export default class ImageTemplate extends React.Component {

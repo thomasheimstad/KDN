@@ -4,7 +4,7 @@ import HeroImg from '../components/Modules/HeroImg';
 import config from '../../data/SiteConfig';
 import Layout from '../components/layout';
 import Helmet from 'react-helmet';
-import Seo from '../components/seo/Seo';
+import Seo from '../components/modules/Seo';
 import RolesList from '../components/Bio/RolesList';
 export default class Roles extends React.Component {
   render = () => {

@@ -6,7 +6,7 @@ import {FaFacebook} from 'react-icons/fa';
 import config from '../../data/SiteConfig';
 import Layout from "../components/layout";
 import Helmet from 'react-helmet';
-import Seo from '../components/seo/Seo';
+import Seo from '../components/modules/Seo';
 
 const Contact = (props) => (
   <StaticQuery
