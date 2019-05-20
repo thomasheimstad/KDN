@@ -12,10 +12,16 @@ export default class Bio extends React.Component {
   state = {
     lang: 'eng'
   }
-  handleClick = (ref) => {
-    this.setState({
-      lang: ref
-    })
+  handleClick = () => {
+    if(this.state.lang === "eng"){
+      this.setState({
+        lang: "nor"
+      })
+    } else {
+      this.setState({
+        lang: "eng"
+      })
+    }
   }
   render = () => {
     return (
@@ -31,10 +37,10 @@ export default class Bio extends React.Component {
              <h1>KARI DAHL NIELSEN</h1>
              <h2>MEZZO SOPRANO</h2>
            </div>
-           {this.state.lang === "eng" ? <EngBio fluid={this.props.data.file.childImageSharp.fluid}/> : <NorBio/>}
+           {this.state.lang === "eng" ? <EngBio /> : <NorBio/>}
            <div className="flex center">
-             <div className={this.state.lang === "nor" ? "button activeButton" : "button"} onClick={() => this.handleClick('eng')}><h3>english</h3></div>
-             <div className={this.state.lang === "eng" ? "button activeButton" : "button"} onClick={() => this.handleClick('nor')}><h3>norwegian</h3></div>
+             <div className={this.state.lang === "nor" ? "button activeButton" : "button"} onClick={() => this.handleClick()}><h3>english</h3></div>
+             <div className={this.state.lang === "eng" ? "button activeButton" : "button"} onClick={() => this.handleClick()}><h3>norwegian</h3></div>
            </div>
          </article>
        </div>
