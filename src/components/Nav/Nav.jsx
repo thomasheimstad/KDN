@@ -7,13 +7,13 @@ const Nav = (props) => {
       <Link exact='true' to="/" activeClassName="activeNav">
         <h3>KARI</h3>
       </Link>
-      <Link to="bio" activeClassName="activeNav">
+      <Link to="/bio" activeClassName="activeNav">
         <h3>ABOUT</h3>
       </Link>
-      <Link to="roles" activeClassName="activeNav">
+      <Link to="/roles" activeClassName="activeNav">
         <h3>ROLES</h3>
       </Link>
-      <Link to="gallery" activeClassName="activeNav">
+      <Link to="/gallery" activeClassName="activeNav">
         <h3>IMAGES</h3>
       </Link>
     </div>

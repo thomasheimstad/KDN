@@ -4,7 +4,7 @@
   .frontRolesListWrapper{
     flex-flow: column;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     max-width: 80%;
     padding-bottom: 0;
     @media screen and (max-width: 768px) {
@@ -15,25 +15,27 @@
       padding-bottom: $mobile-padding-y;
     }
     section {
-      flex: 0 1 auto;
-      margin: 0;
-      padding: 1rem;
-      background: #493036;
-      justify-content: center;
-      text-align: left;
+      margin: 1.4rem 0;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid $white;
       @media screen and (max-width: 768px) {
-        padding: 1.5rem;
       }
-      h5, h6, p {
+      &:last-of-type {
+        border-bottom: 0;
+      }
+      h4, h5, p {
         color: $white;
         margin: 0;
         line-height: 1;
+        padding: 0;
       }
-      h6 {
-        color: $sec-font-color;
-      }
-      h6:last-of-type{
-        color: $milkchocolate2;
+      h4 {
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 0.5rem;
+        font-weight: 700;
+        color: lighten($olive, 25%);
+        margin: 0;
       }
     }
   }

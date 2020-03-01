@@ -13,6 +13,9 @@
   }
   article {
     padding-bottom: 0;
+    @media screen and (max-width: 768px) {
+      padding-bottom: $mobile-padding-y/2;
+    }
     p {
       max-width: 70ch;
       hyphens: none;

@@ -13,7 +13,7 @@ export default class Bio extends React.Component {
     lang: 'eng'
   }
   handleClick = () => {
-    if(this.state.lang === "eng"){
+    if(this.state.lang == "eng"){
       this.setState({
         lang: "nor"
       })
@@ -39,8 +39,7 @@ export default class Bio extends React.Component {
            </div>
            {this.state.lang === "eng" ? <EngBio /> : <NorBio/>}
            <div className="flex center">
-             <div className={this.state.lang === "nor" ? "button activeButton" : "button"} onClick={() => this.handleClick()}><h3>english</h3></div>
-             <div className={this.state.lang === "eng" ? "button activeButton" : "button"} onClick={() => this.handleClick()}><h3>norwegian</h3></div>
+             <div className={"button activeButton"} onClick={() => this.handleClick()}><h3>{this.state.lang === "eng" ? "på norsk" : "in english"}</h3></div>
            </div>
          </article>
        </div>
