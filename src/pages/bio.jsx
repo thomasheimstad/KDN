@@ -1,19 +1,19 @@
 import React from 'react';
 import config from '../../data/SiteConfig';
 import {graphql} from 'gatsby';
-import HeroImg from '../components/Modules/HeroImg';
+import HeroImg from '../components/modules/HeroImg';
 import Layout from '../components/layout';
 import Helmet from 'react-helmet';
 import Seo from '../components/modules/Seo';
-import EngBio from '../components/Bio/EngBio';
-import NorBio from '../components/Bio/NorBio';
+import EngBio from '../components/bio/EngBio';
+import NorBio from '../components/bio/NorBio';
 
 export default class Bio extends React.Component {
   state = {
     lang: 'eng'
   }
   handleClick = () => {
-    if(this.state.lang == "eng"){
+    if(this.state.lang === "eng"){
       this.setState({
         lang: "nor"
       })
@@ -25,7 +25,7 @@ export default class Bio extends React.Component {
   }
   render = () => {
     return (
-      <Layout location={this.props.location}>
+      <Layout>
         <Helmet>
           <title>{`Bio | ${config.siteTitle}`}</title>
         </Helmet>
@@ -39,7 +39,7 @@ export default class Bio extends React.Component {
            </div>
            {this.state.lang === "eng" ? <EngBio /> : <NorBio/>}
            <div className="flex center">
-             <div className={"button activeButton"} onClick={() => this.handleClick()}><h3>{this.state.lang === "eng" ? "på norsk" : "in english"}</h3></div>
+             <div className={"button activeButton"}><h3 onClick={() => this.handleClick()} >{this.state.lang === "eng" ? "på norsk" : "in english"}</h3></div>
            </div>
          </article>
        </div>

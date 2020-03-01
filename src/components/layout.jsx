@@ -3,8 +3,10 @@ import Helmet from "react-helmet";
 import WindowDimensionsProvider from '../components/context/WindowDimensionsProvider';
 import siteConfig from "../../data/SiteConfig";
 import { useSpring, animated, config } from 'react-spring';
-import Nav from '../components/Nav/Nav';
+import Nav from '../components/nav/Nav';
+import Footer from "../components/footer/Footer";
 import '../css/styles.scss';
+import favicon from '../../content/img/logo-512x512.png';
 
 const AniWrapper = (props) => {
   const contentProps = useSpring({ config: config.fast, from: { opacity: 0 }, to: { opacity: 1 } })
@@ -16,54 +18,17 @@ const AniWrapper = (props) => {
 }
 
 export default class Layout extends React.Component {
-  state = {
-    percentage: 0,
-    windowHeight: '',
-    windowWidth: '',
-  }
-  handleScroll = () => {
-    let h = document.documentElement,
-        b = document.body,
-        st = 'scrollTop',
-        sh = 'scrollHeight',
-        ih = this.state.windowHeight;
-    let percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - (ih)) * 100;
-    this.setState({
-      percentage: percent
-    })
-  }
-  handleResize = () => {
-    let w = window,
-        d = document,
-        e = d.documentElement,
-        g = d.getElementsByTagName('body')[0],
-        x = w.innerWidth || e.clientWidth || g.clientWidth,
-        y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-        this.setState({
-          windowWidth: x,
-          windowHeight: y
-        })
-  }
-  componentDidMount = () => {
-    this.handleScroll();
-    this.handleResize();
-    window.addEventListener('scroll', this.handleScroll);
-    window.addEventListener('resize', this.handleResize);
-  }
-  componentWillUnmount = () => {
-    window.removeEventListener('scroll', this.handleScroll);
-    window.removeEventListener('scroll', this.handleResize);
-  }
   render() {
-    const { children, location, state } = this.props;
+    const { children } = this.props;
     return (
       <>
         <WindowDimensionsProvider>
-        <Helmet>
-          <title>{`${config.siteTitle} |  `}</title>
-          <meta name="description" content={config.siteDescription} />
-        </Helmet>
-        <Nav/>
+          <Helmet>
+            <title>{`${config.siteTitle} |  `}</title>
+            <meta name="description" content={config.siteDescription} />
+            <link rel='shortcut icon' type='image/png' href={`${favicon}`} />
+          </Helmet>
+          <Nav/>
           {/*<Transition>{children}</Transition>*/}
           {/*<Transition keys={location.pathname}
             from={{ opacity: 0, transform: 'translate3d(100%,0,0)' }}
@@ -77,6 +42,7 @@ export default class Layout extends React.Component {
           <AniWrapper>
             {children}
           </AniWrapper>
+          <Footer />
         </WindowDimensionsProvider>
       </>
     );

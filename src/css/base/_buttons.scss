@@ -5,18 +5,18 @@
   margin: 0 0.5rem 1rem;
   text-align: center;
   a, h1, h2, h3, h4, p {
-    border: 1px solid $sec-font-color;
+    border: 1px solid $secondary-font-color;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 2px;
     padding: 0.5rem 1rem;
     background: inherit;
-    color: $sec-font-color;
+    color: $secondary-font-color;
     transition: $base-in-timing $base-in-duration;
     &:hover {
       background: $action-color;
-      border: 1px solid $sec-font-color;
-      color: $sec-font-color;
+      border: 1px solid $secondary-font-color;
+      color: $secondary-font-color;
     }
     @media screen and (max-width: 768px) {
       padding: 0.5rem 1rem;

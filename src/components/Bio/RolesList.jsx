@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 const RolesList = (props) => (
-    <Fragment>
+    <>
       <div className="flex frontRolesListWrapper column center basePad">
         <section className="flex column wrap center">
           <h4>Verdi</h4>
@@ -81,6 +81,6 @@ const RolesList = (props) => (
           </div>
         </section>
       </div>
-    </Fragment>
+    </>
   )
 export default RolesList;

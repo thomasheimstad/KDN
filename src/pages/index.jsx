@@ -2,23 +2,21 @@ import React from "react";
 import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 import Layout from "../components/layout";
-import Nav from "../components/Nav/Nav";
+import Nav from "../components/nav/Nav";
+import NavHome from "../components/nav/NavHome";
 import Seo from "../components/modules/Seo";
 import config from "../../data/SiteConfig";
-import Home from '../components/FrontPage/Home';
-import WindowDimensionsProvider from '../components/context/WindowDimensionsProvider';
+import Home from '../components/frontpage/Home';
 
 class Index extends React.Component {
   render() {
     return (
-      <>
-        <Nav home/>
+      <Layout>
+        <NavHome />
         <Helmet title={config.siteTitle} />
         <Seo />
-        <WindowDimensionsProvider>
-          <Home homeImage={this.props.data.file.childImageSharp.fluid}/>
-        </WindowDimensionsProvider>
-      </>
+        <Home homeImage={this.props.data.file.childImageSharp.fluid}/>
+      </Layout>
     );
   }
 }

@@ -4,7 +4,8 @@ const WindowDimensionsProvider = ({ children }) => {
 
   const [dimensions, setDimensions] = useState({
     windowWidth: '',
-    windowHeight: ''
+    windowHeight: '',
+    footerHeight: '',
   });
   const handleResize = () => {
     let w = window,
@@ -12,17 +13,19 @@ const WindowDimensionsProvider = ({ children }) => {
         e = d.documentElement,
         g = d.getElementsByTagName('body')[0],
         x = w.innerWidth || e.clientWidth || g.clientWidth,
-        y = w.innerHeight|| e.clientHeight|| g.clientHeight
+        y = w.innerHeight|| e.clientHeight|| g.clientHeight,
+        f = d.getElementsByTagName('Footer')[0].offsetHeight;
     setDimensions({
       windowWidth: x,
       windowHeight: y,
+      footerHeight: f,
     });
   };
   useEffect(() => {
     window.addEventListener('resize', handleResize)
     handleResize();
     return () => { window.removeEventListener('resize', handleResize) }
-  }, [handleResize]);
+  }, []);
   return (
     <WindowDimensionsCtx.Provider value={dimensions}>
       {children}

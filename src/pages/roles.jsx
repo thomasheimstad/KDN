@@ -1,11 +1,12 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import HeroImg from '../components/Modules/HeroImg';
+import HeroImg from '../components/modules/HeroImg';
 import config from '../../data/SiteConfig';
 import Layout from '../components/layout';
 import Helmet from 'react-helmet';
 import Seo from '../components/modules/Seo';
-import RolesList from '../components/Bio/RolesList';
+import RolesList from '../components/bio/RolesList';
+
 export default class Roles extends React.Component {
   render = () => {
     let props = this.props;
@@ -25,7 +26,7 @@ export default class Roles extends React.Component {
           }
         `}
        render={data => (
-         <Layout location={props.location}>
+         <Layout>
            <Helmet>
              <title>{`Roles | ${config.siteTitle}`}</title>
            </Helmet>

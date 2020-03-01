@@ -9,6 +9,7 @@ import useMedia from './useMedia'
 import Img from 'gatsby-image'
 
 export default function Masonry(propp) {
+  const { windowHeight, windowWidth, footerHeight } = useWindowDimensions();
   const heightList = () => {
     let list = []
     propp.postList.map(x => {
@@ -28,31 +29,29 @@ export default function Masonry(propp) {
           css: x.img.childImageSharp.fluid.src,
           height: height,
           fluid: x.img.childImageSharp.fluid,
-          path: x.path
+          path: x.path,
         })
       })
     })
-    function sortByKey(array, key) {
-      return array.sort(function(a, b) {
-        var x = a[key]; var y = b[key];
-        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-        });
+    let sortByKey = (array) => {
+      return array.sort((a,b) => {
+        a.height > b.height ? 1 : -1
+      })
     }
-    sortByKey(list, "css")
-    return list;
+
+    return sortByKey(list);
   }
 
   const columns = useMedia(['(min-width: 1500px)', '(min-width: 1000px)', '(min-width: 768px)'], [4, 3, 2], 1)
   const [bind, { width }] = useMeasure()
   const [items, set] = useState(heightList)
-
   {/*useEffect(() => {
     return () => void set(shuffle)
   }, [])*/}
   useEffect(() => {
     return () => void heightList();
     },
-  [heightList])
+  [])
 
   let heights = new Array(columns).fill(0) // Each column gets a height starting with zero
   let gridItems = items.map((child, i) => {
@@ -63,25 +62,23 @@ export default function Masonry(propp) {
 
   // This turns gridItems into transitions, any addition, removal or change will be animated
   const transitions = useTransition(gridItems, item => item.css, {
-    from: ({ xy, width, height }) => ({ xy, width, height, opacity: 0 }),
+    from: ({ xy, width, height }) => ({ xy, width, height, opacity: 1 }),
     enter: ({ xy, width, height }) => ({ xy, width, height, opacity: 1 }),
     update: ({ xy, width, height }) => ({ xy, width, height }),
-    leave: { height: 0, opacity: 0 },
-    config: { mass: 1, tension: 400, friction:30 },
+    config: { mass: 1, tension: 240, friction:20 },
     trail: 1,
   })
-  const { windowHeight, windowWidth } = useWindowDimensions();
 
   return (
     <div className="masonryView flex center column" style={{width: '100%'}}>
-      <div className="flex row wrap basePad center" style={{minHeight: windowHeight, width: '100%'}}>
+      <div className="flex row wrap basePad center" style={{minHeight: windowHeight-footerHeight, width: '100%'}}>
         <div {...bind} className="list" style={{ height: Math.max(...heights) }}>
           {transitions.map(({ item, props: { xy, ...rest }, key }) => (
             <a.div
               key={key}
               style={{ transform: xy.interpolate((x, y) => `translate3d(${x}px,${y}px,0)`), ...rest }}
               onClick={(()=> navigate(item.path))} >
-              <Img fluid={item.fluid} to={item.path}/>
+              <Img fluid={item.fluid} to={item.path} alt={`Photo by: `}/>
             </a.div>
           ))}
         </div>

@@ -1,7 +1,7 @@
 .frontBio {
   background: #1E1D22;
   background: #323949;
-  color: $sec-font-color;
+  color: $secondary-font-color;
   .contactList {
     padding-top: $base-padding-y;
     a {
@@ -25,7 +25,7 @@
     }
     h1, h2, h4 {
       line-height: 1;
-      color: $sec-font-color;
+      color: $secondary-font-color;
     }
     h1 {
       font-weight: 700;
@@ -45,7 +45,7 @@
       margin: 0;
     }
     a:hover {
-      color: darken($sec-font-color, 15%);
+      color: darken($secondary-font-color, 15%);
     }
     @media screen and (max-width: 768px) {
       p {

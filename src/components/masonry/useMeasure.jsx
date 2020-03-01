@@ -8,6 +8,6 @@ export default function useMeasure() {
   useEffect(() => {
     if (ref.current) ro.observe(ref.current);
     return () => ro.disconnect();
-  }, []);
+  }, [bounds]);
   return [{ ref }, bounds]
 }

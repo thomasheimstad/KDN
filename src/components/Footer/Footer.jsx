@@ -1,32 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
-import UserLinks from "../UserLinks/UserLinks";
-import "./Footer.css";
+import NavLinks from '../nav/NavLinks';
+import config from "../../../data/SiteConfig";
 
 class Footer extends Component {
   render() {
-    const { config } = this.props;
-    const url = config.siteRss ? config.siteRss : null
-    const { copyright } = config;
-    if (!copyright) {
-      return null;
-    }
     return (
-      <footer className="footer">
-        <UserLinks config={config} labeled />
-        <div className="notice-container">
-          <h4>{copyright}</h4>
-
-          {url ? <Link to={url}>
-            <button>Subscribe</button>
-          </Link> : null
-          }
-          <h4>
-            Based on{" "}
-            <a href="https://github.com/Vagr9K/gatsby-advanced-starter">
-              Gatsby Advanced Starter
-            </a>.
-          </h4>
+      <footer className="footer flex center column basePad">
+        <NavLinks/>
+        <div className="flex column">
+          <p>{config.siteDescription}</p>
+          <p>{config.copyright}</p>
         </div>
       </footer>
     );

@@ -35,12 +35,17 @@
   box-shadow: 0;
   background: rgba(0,0,0,0);
 }
-a {
+a, a h3 {
   transform: translate3d(0,0,0);
   transition: 150ms ease-out;
 
   &:hover {
     transform: translate3d(0,0,0);
     transition: 100ms ease-in;
+  }
+  &:hover h3 {
+    transform: translate3d(0,0,0);
+    transition: 100ms ease-in;
+    color: lighten($secondary-font-color, 5%);
   }
 }

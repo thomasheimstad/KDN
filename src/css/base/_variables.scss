@@ -1,3 +1,29 @@
+// Typography
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+$base-font-family: 'Roboto', sans-serif;
+$heading-font-family: 'Roboto', sans-serif;
+h1,h2,h3,h4,h5,h6, button {
+  font-family: $heading-font-family;
+  letter-spacing: 1px;
+}
+p,i {
+  font-family: $base-font-family;
+  line-height: 1.5;
+}
+
+// Font Sizes
+$base-font-size: 1em;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
 // Colors
 $blue: #1565c0;
 $dark-gray: #333;
@@ -43,27 +69,21 @@ $formheader: #607d8b;
 $bluejacket: #222e48;
 $brownchair: #39271c;
 $postgrey: #e0e0e0;
-
-$lightpurple: #3a4058;
-$darkpurple: #353238;
-$lightgreen: #92C5AE;
-$averagepurple: #402f3a;
-
 // Font Colors
-$action-color:  $lightpurple;
+$action-color:  $mint;
 $secondary-action-color: $beige;
-
-
-$base-font-color: #111; /*$dark-gray;*/
-$sec-font-color: $gray;
+$base-font-color: $dark-gray; /*$dark-gray;*/
+$secondary-font-color: $gray2;
 $subtitle: lighten($base-font-color, 15%);
+
+$h1: $fefd;
 
 $post-color:        $navy;
 $post-header-color: $navy;
 
-$calendar-font-color: $sec-font-color;
+$calendar-font-color: $secondary-font-color;
 
-$footer-color: $sec-font-color;
+$footer-color: $secondary-font-color;
 
 
 // Border
@@ -74,7 +94,7 @@ $base-border: 1px solid $base-border-color;
 
 // Background Colors
 $base-background-color: $fefd; /*#fff;*/
-$secondary-background-color: $sec-font-color;
+$secondary-background-color: $secondary-font-color;
 
 $form-background-color: #eceff1;
 $articles-background-color: $blue-asphalt;
@@ -102,3 +122,8 @@ $base-in-duration: 300ms;
 $base-in-timing: ease-out;
 $base-out-duration: 200ms;
 $base-out-timing: ease-in;
+
+// Font Colors
+h1,h2,h3,h4,h5,h6,p {
+  color: $base-font-color;
+}

@@ -74,10 +74,13 @@ module.exports = {
         color: config.themeColor
       }
     },
+    "gatsby-plugin-netlify",
+    "gatsby-plugin-netlify-cache",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
+    "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
