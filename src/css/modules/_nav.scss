@@ -17,7 +17,7 @@
     color: $gray2;
     letter-spacing: 2px;
     &:hover {
-      color: $secondary-font-color;
+      color: darken($gray2, 50%);
     }
   }
   p {
@@ -26,18 +26,27 @@
 }
 .nav {
   width: 100%;
-  position: fixed;
+  position: absolute;
   z-index: 2;
+  transition: $base-in-timing $base-in-duration;
+  ul {
+    padding-left: 0;
+    margin: 0;
+    align-items: center;
+    height: 5rem;
+    justify-content: center;
+  }
+
   h3 {
     transition: 0.225s ease-in;
     margin: 0;
     font-weight: 700;
     line-height: 0;
     font-size: 130%;
-    padding: $base-padding-y/2 0.3rem;
+    padding: $base-padding-y/3 0.3rem;
     color: $gray2;
     &:hover {
-      color: $secondary-font-color;
+      color: darken($gray2, 50%);
     }
     @media screen and (max-width: 768px){
       padding: $mobile-padding-y/2 0.3rem;
@@ -45,8 +54,11 @@
     }
   }
 }
+.nav.navBackground {
+  transition: $base-out-timing $base-out-duration;
+}
 .activeNav {
-  h3 {
-    color: $gray;
+  h3{
+    color: $peach;
   }
 }

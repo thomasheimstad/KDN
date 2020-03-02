@@ -3,7 +3,7 @@ import {Link} from 'gatsby';
 
 const NavLinks = () => {
   return (
-    <ul>
+    <ul className="flex">
       <li>
         <Link exact='true' to="/" activeClassName="activeNav">
           <h3>KARI</h3>

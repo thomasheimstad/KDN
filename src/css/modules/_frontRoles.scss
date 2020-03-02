@@ -15,7 +15,7 @@
       padding-bottom: $mobile-padding-y;
     }
     section {
-      margin: 1.4rem 0;
+      margin: 1.66rem 0;
       padding-bottom: 0.8rem;
       border-bottom: 1px solid $white;
       @media screen and (max-width: 768px) {
@@ -28,6 +28,7 @@
         margin: 0;
         line-height: 1;
         padding: 0;
+        padding-top: 0.5rem;
       }
       h4 {
         color: $white;
@@ -36,6 +37,7 @@
         font-weight: 700;
         color: lighten($olive, 25%);
         margin: 0;
+        padding: 0;
       }
     }
   }

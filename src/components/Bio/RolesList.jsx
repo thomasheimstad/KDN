@@ -9,6 +9,16 @@ const RolesList = (props) => (
             <h5> - </h5>&nbsp;
             <h5>Emilia</h5>
           </div>
+          <div className="flex row">
+            <h5>Otello</h5>&nbsp;
+            <h5> - </h5>&nbsp;
+            <h5>Emilia</h5>
+          </div>
+          <div className="flex row">
+            <h5>Otello</h5>&nbsp;
+            <h5> - </h5>&nbsp;
+            <h5>Emilia</h5>
+          </div>
         </section>
         <section className="flex column wrap center">
           <h4>Mozart</h4>

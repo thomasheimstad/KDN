@@ -33,7 +33,7 @@ export default class Bio extends React.Component {
         <div className="frontBio flex center column basePadFullMobile">
           <HeroImg fluid={this.props.data.file.childImageSharp.fluid} posY="50%" posX="30%" divider="1.66"/>
           <article className="flex center column basePad">
-           <div className="flex column center basePad" style={{width: '100%', paddingTop: '0'}}>
+           <div className="flex column center" style={{width: '100%', paddingBottom: '2.5rem'}}>
              <h1>KARI DAHL NIELSEN</h1>
              <h2>MEZZO SOPRANO</h2>
            </div>

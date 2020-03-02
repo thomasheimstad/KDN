@@ -14,8 +14,7 @@
     color: $secondary-font-color;
     transition: $base-in-timing $base-in-duration;
     &:hover {
-      background: $action-color;
-      border: 1px solid $secondary-font-color;
+      border-bottom: 1px solid $secondary-font-color;
       color: $secondary-font-color;
     }
     @media screen and (max-width: 768px) {

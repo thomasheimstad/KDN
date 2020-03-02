@@ -22,6 +22,7 @@
       flex: 1;
       letter-spacing: 1px;
       text-align: justify;
+      color: inherit;
     }
     h1, h2, h4 {
       line-height: 1;
@@ -37,9 +38,10 @@
     }
     h2 {
       margin: 0;
-      padding-top: 1rem;
+      padding-top: 0.5rem;
       font-size: 1.5rem;
       letter-spacing: 0.1rem;
+      color: darken($white, 30%);
     }
     h3 {
       margin: 0;

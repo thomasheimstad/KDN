@@ -11,43 +11,48 @@ footer {
       color: darken($secondary-font-color, 20%);
     }
   }
-    ul {
-      width: 100%;
-      margin-block-end: 0;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      .active {
-        h3 {
-          color: $olive;
-        }
+  ul {
+    width: 100%;
+    margin-block-end: 0;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .active {
+      h3 {
+        color: $olive;
       }
-      @media screen and (max-width:768px) {
-        flex-direction: column;
-        text-align: left;
-        align-items: flex-start;
-        h3 {
-          padding: 0;
-          margin: 0;
-        }
+    }
+    @media screen and (max-width:768px) {
+      flex-direction: column;
+      text-align: left;
+      align-items: flex-start;
+      justify-content: flex-start;
+      h3 {
+        padding: 0;
+        margin: 0;
       }
-      li {
-        margin: 0 10px;
-        padding: 10px 0;
+    }
+    li {
+      margin: 0 10px;
+      padding: 10px 0;
     }
   }
-  > div {
+  div.flex.column {
     width: 100%;
     align-items: center;
     text-align: center;
     p {
       max-width: 70ch;
+      margin: 0;
     }
     @media screen and (max-width: 768px) {
       align-items: flex-start;
       text-align: left;
+      text-align: left;
+      align-items: flex-start;
+      justify-content: flex-start;
     }
   }
 }

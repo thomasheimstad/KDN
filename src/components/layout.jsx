@@ -16,10 +16,21 @@ const AniWrapper = (props) => {
     </animated.div>
   )
 }
-
 export default class Layout extends React.Component {
+  state = {
+    myLocation: ''
+  }
+  componentDidMount = () => {
+    this.setState({
+      myLocation: location
+    })
+  }
   render() {
-    const { children } = this.props;
+    const { children, location } = this.props;
+    let handleClicker = () => {
+      console.log(this.state.myLocation)
+    }
+
     return (
       <>
         <WindowDimensionsProvider>
@@ -28,7 +39,7 @@ export default class Layout extends React.Component {
             <meta name="description" content={config.siteDescription} />
             <link rel='shortcut icon' type='image/png' href={`${favicon}`} />
           </Helmet>
-          <Nav/>
+          {this.state.myLocation.pathname === "/" ? '' : <Nav/>}
           {/*<Transition>{children}</Transition>*/}
           {/*<Transition keys={location.pathname}
             from={{ opacity: 0, transform: 'translate3d(100%,0,0)' }}
@@ -42,7 +53,7 @@ export default class Layout extends React.Component {
           <AniWrapper>
             {children}
           </AniWrapper>
-          <Footer />
+          { this.state.myLocation.pathname === "/" ? '' : <Footer /> }
         </WindowDimensionsProvider>
       </>
     );
