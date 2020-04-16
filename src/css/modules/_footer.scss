@@ -1,9 +1,16 @@
 footer {
-  background: $black;
-  position: relative;
+  background: $action-color;
+
   p,h3 {
     color: $secondary-font-color;
     transition: $base-in-timing $base-in-duration;
+  }
+  h3 {
+    font-size: 120%;
+    margin-right: 0.5rem;
+  }
+  svg {
+    color: $secondary-font-color;
   }
   a:hover {
     transition: $base-in-timing $base-in-duration;
@@ -35,7 +42,7 @@ footer {
       }
     }
     li {
-      margin: 0 10px;
+      margin: 0 0px;
       padding: 10px 0;
     }
   }
@@ -46,6 +53,7 @@ footer {
     p {
       max-width: 70ch;
       margin: 0;
+      font-size: 80%;
     }
     @media screen and (max-width: 768px) {
       align-items: flex-start;

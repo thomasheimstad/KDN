@@ -13,12 +13,10 @@ const WindowDimensionsProvider = ({ children }) => {
         e = d.documentElement,
         g = d.getElementsByTagName('body')[0],
         x = w.innerWidth || e.clientWidth || g.clientWidth,
-        y = w.innerHeight|| e.clientHeight|| g.clientHeight,
-        f = d.getElementsByTagName('Footer')[0].offsetHeight;
+        y = w.innerHeight|| e.clientHeight|| g.clientHeight
     setDimensions({
       windowWidth: x,
-      windowHeight: y,
-      footerHeight: f,
+      windowHeight: y
     });
   };
   useEffect(() => {

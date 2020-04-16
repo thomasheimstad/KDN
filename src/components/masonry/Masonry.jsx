@@ -9,7 +9,7 @@ import useMedia from './useMedia'
 import Img from 'gatsby-image'
 
 export default function Masonry(propp) {
-  const { windowHeight, windowWidth, footerHeight } = useWindowDimensions();
+  const { windowHeight, windowWidth } = useWindowDimensions();
   const heightList = () => {
     let list = []
     propp.postList.map(x => {
@@ -71,7 +71,7 @@ export default function Masonry(propp) {
 
   return (
     <div className="masonryView flex center column" style={{width: '100%'}}>
-      <div className="flex row wrap basePad center" style={{minHeight: windowHeight-footerHeight, width: '100%'}}>
+      <div className="flex row wrap basePad center" style={{ width: '100%'}}>
         <div {...bind} className="list" style={{ height: Math.max(...heights) }}>
           {transitions.map(({ item, props: { xy, ...rest }, key }) => (
             <a.div

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import Masonry from '../../components/masonry/Masonry';
-
+import Calendar from './Calendar';
 class PostListing extends React.Component {
   state = {
     view: 'default'
@@ -25,7 +25,12 @@ class PostListing extends React.Component {
         timeToRead: postEdge.node.timeToRead,
         category: postEdge.node.frontmatter.category,
         quote: postEdge.node.frontmatter.quote,
-        author: postEdge.node.frontmatter.author
+        author: postEdge.node.frontmatter.author,
+        time: postEdge.node.frontmatter.time,
+        composer: postEdge.node.frontmatter.composer,
+        opera: postEdge.node.frontmatter.opera,
+        orchestra: postEdge.node.frontmatter.orchestra,
+        conductor: postEdge.node.frontmatter.conductor,
       });
     });
     return postList;
@@ -33,10 +38,9 @@ class PostListing extends React.Component {
   render = () => {
     const postList = this.getPostList();
     if(this.state.view == "gallery") {
-      return (
-        //<GalleryView postList={postList} />
-        <Masonry postList={postList} />
-      )
+      return ( <Masonry postList={postList} /> )
+    } else if(this.state.view == "calendar") {
+      return ( <Calendar postList={postList} />)
     } else {
       return (
         <div>

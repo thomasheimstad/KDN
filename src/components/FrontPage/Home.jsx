@@ -6,7 +6,7 @@ const Home = (props) => {
   return (
     <div className="frontHero" style={{height: windowHeight}}>
       <Img
-        fluid={props.homeImage}
+        fluid={props.firstImage}
         style={{
          position: 'absolute',
          left: 0,
@@ -17,7 +17,7 @@ const Home = (props) => {
          background: 'black'
        }}
        imgStyle={{
-         objectPosition: '40% 40%',
+         objectPosition: '50% 50%',
          opacity: '1'
        }}
       />

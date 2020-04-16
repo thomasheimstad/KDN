@@ -14,7 +14,7 @@ export default class Roles extends React.Component {
       <StaticQuery
         query={graphql`
           query {
-            file(relativePath: { regex: "/KariB.jpg/" }) {
+            file(relativePath: { eq: "KariB.jpg" }) {
               childImageSharp {
                 # Specify the image processing specifications right in the query.
                 # Makes it trivial to update as your page's design changes.
@@ -26,7 +26,7 @@ export default class Roles extends React.Component {
           }
         `}
        render={data => (
-         <Layout>
+         <Layout location={props.location}>
            <Helmet>
              <title>{`Roles | ${config.siteTitle}`}</title>
            </Helmet>

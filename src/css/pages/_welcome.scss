@@ -1,0 +1,25 @@
+.welcome {
+  position: absolute;
+  background: transparent;
+  overflow: hidden;
+  width: 100%;
+  padding-top: $base-padding-x/1.5;
+  padding-left: 2rem;
+  z-index: 1;
+  .trails-text {
+    display: flex;
+    h3 {
+      padding-right: 0.5rem;
+      font-weight: 100;
+      margin: 0;
+      line-height: 1;
+      color: darken(#d7beb0, 25%);
+      text-transform: uppercase;
+      font-size: 140%;
+      @media screen and (max-width: 768px) {
+        font-size: 80%;
+        font-weight: 700;
+      }
+    }
+  }
+}

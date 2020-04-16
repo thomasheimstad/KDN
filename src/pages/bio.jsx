@@ -25,7 +25,7 @@ export default class Bio extends React.Component {
   }
   render = () => {
     return (
-      <Layout>
+      <Layout location={location}>
         <Helmet>
           <title>{`Bio | ${config.siteTitle}`}</title>
         </Helmet>
@@ -49,7 +49,7 @@ export default class Bio extends React.Component {
 }
 export const query = graphql`
   query kariBioImageQuery {
-    file(relativePath: { regex: "/KariCherubino.jpg/" }) {
+    file(relativePath: { eq: "KariCherubino.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.

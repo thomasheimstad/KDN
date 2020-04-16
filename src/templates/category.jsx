@@ -16,7 +16,9 @@ export default class CategoryTemplate extends React.Component {
           <Helmet
             title={`${_.upperFirst(category)} | ${config.siteTitle}`}
           />
-          <PostListing postEdges={postEdges} />
+          <PostListing
+            postEdges={postEdges}
+            calendarView={this.props.data.calendarView.childImageSharp.fluid} />
         </div>
       </Layout>
     );
@@ -26,7 +28,7 @@ export default class CategoryTemplate extends React.Component {
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query CategoryPage($category: String) {
-    allMarkdownRemark(
+    allMarkdownRemark: allMarkdownRemark(
       limit: 1000
       sort: { fields: [fields___date], order: DESC }
       filter: { frontmatter: { category: { eq: $category } } }
@@ -55,6 +57,13 @@ export const pageQuery = graphql`
             }
             date
           }
+        }
+      }
+    }
+    calendarView: file(relativePath: { eq: "kari.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

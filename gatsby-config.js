@@ -2,7 +2,7 @@ const config = require("./data/SiteConfig");
 const urljoin = require("url-join");
 
 module.exports = {
-  pathPrefix: config.pathPrefix,
+  pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
   siteMetadata: {
     siteUrl: urljoin(config.siteUrl, config.pathPrefix),
     rssMetadata: {
@@ -41,6 +41,13 @@ module.exports = {
       options: {
         name: "posts",
         path: `${__dirname}/content/posts`
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "calendar",
+        path: `${__dirname}/content/calendar`
       }
     },
     {
