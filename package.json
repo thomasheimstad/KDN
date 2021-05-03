@@ -4,7 +4,6 @@
   "version": "1.1.0",
   "author": "Thomas Heimstad",
   "dependencies": {
-    "fsevents": "^2.3.2",
     "gatsby": "^3.4.0",
     "gatsby-cli": "^2.13.1",
     "gatsby-image": "^2.11.0",
@@ -64,6 +63,9 @@
     "stylelint-config-standard": "^18.3.0",
     "write-good": "^1.0.8"
   },
+  "optionalDependencies": {
+  "fsevents": "2.3.2"
+},
   "keywords": [
     "gatsby"
   ],
