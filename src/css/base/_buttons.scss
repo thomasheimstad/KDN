@@ -1,32 +1,48 @@
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 0.5rem 1rem;
-  text-align: center;
-  a, h1, h2, h3, h4, p {
-    border: 1px solid $secondary-font-color;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 2px;
-    padding: 0.5rem 1rem;
-    background: inherit;
-    color: $secondary-font-color;
-    transition: $base-in-timing $base-in-duration;
-    &:hover {
-      border-bottom: 1px solid $secondary-font-color;
-      color: $secondary-font-color;
+.buttons {
+  margin: 0;
+  flex: 1;
+  flex-flow: row;
+  button {
+    position: relative;
+    display: inline-block;
+    border: 0;
+    margin: 5px 5px;
+    padding: 2rem;
+    border-radius: 50%;
+    line-height: 0;
+    transition: $base-in-duration $base-in-timing;
+    background: rgba(0,0,0,0.2);
+    svg {
+      color: $action-color;
+      transition: $base-in-timing $base-in-duration;
     }
-    @media screen and (max-width: 768px) {
-      padding: 0.5rem 1rem;
-      font-size: 0.8rem;
+    &:hover {
+      box-shadow: 2px 3px 10px rgba($black,1);
+      svg {
+        color: darken($action-color, 25%);
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    button {
+      margin: 0 2px;
+      padding: 1rem;
     }
   }
 }
-.activeButton {
-  a,h2,h3,h4 {
-    background: inherit;
-    border: 1px solid transparent;
-    color: lighten($action-color, 30%);
+.button {
+  cursor: pointer;
+  transition: $base-in-timing $base-in-duration;
+  line-height: 0;
+  &:hover {
+    box-shadow: 2px 5px 15px $base-font-color;
+  }
+  p {
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+    @media screen and (max-width: 768px) {
+      letter-spacing: 1px;
+    }
   }
 }

@@ -8,7 +8,7 @@ const Calendar = (props) => {
         {/* Your post list here. */
         props.postList.map(post => (
           <div className="card" key={post.title} style={{padding: '0'}}>
-              <div className="flex column center">
+              <div className="flex column" style={{background: 'black'}}>
                 <h2>{post.title}</h2>
                 <h3>{post.date}</h3>
             </div>

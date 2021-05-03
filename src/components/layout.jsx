@@ -53,7 +53,11 @@ export default class Layout extends React.Component {
           <AniWrapper>
             {children}
           </AniWrapper>
-          { this.state.myLocation.pathname === "/" ? '' : <Footer /> }
+          { this.state.myLocation.pathname === "/" ||
+            this.state.myLocation.pathname === "/contacts" ?
+            '' :
+            <Footer />
+          }
         </WindowDimensionsProvider>
       </>
     );

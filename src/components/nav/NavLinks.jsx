@@ -1,28 +1,35 @@
 import React, {Fragment} from 'react';
 import {Link} from 'gatsby';
+import {FaHome, FaInfo, FaCameraRetro, FaPhone, FaTheaterMasks} from 'react-icons/fa';
+import {IoMdCalendar} from 'react-icons/io';
 
 const NavLinks = () => {
   return (
-    <ul className="flex">
+    <ul className="flex basePad">
       <li>
         <Link exact='true' to="/" activeClassName="activeNav">
-          <h3>KARI</h3>
+          <FaHome size={34} />
         </Link>
       </li>
 
       <li>
         <Link to="/bio" activeClassName="activeNav">
-          <h3>ABOUT</h3>
+          <FaInfo size={34} />
         </Link>
       </li>
       <li>
         <Link to="/roles" activeClassName="activeNav">
-          <h3>ROLES</h3>
+          <FaTheaterMasks size={34} />
         </Link>
       </li>
       <li>
         <Link to="/gallery" activeClassName="activeNav">
-          <h3>IMAGES</h3>
+          <FaCameraRetro size={34} />
+        </Link>
+      </li>
+      <li>
+        <Link to="/contact" activeClassName="activeNav">
+          <FaPhone size={34} />
         </Link>
       </li>
     </ul>

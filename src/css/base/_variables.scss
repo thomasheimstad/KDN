@@ -1,7 +1,7 @@
 // Typography
-@import url('https://fonts.googleapis.com/css?family=Cinzel|Open+Sans');
-$base-font-family: 'Open Sans', sans-serif;
-$heading-font-family: 'Cinzel', 'Playfair Display', 'Lobster Two', 'Advent Pro', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Fira+Sans');
+$base-font-family: 'Fira Sans', sans-serif;
+$heading-font-family: 'Cormorant Garamond', sans-serif;
 h1,h2,h3,h4,h5,h6, button {
   font-family: $heading-font-family;
   letter-spacing: 1px;
@@ -69,6 +69,8 @@ $formheader: #607d8b;
 $bluejacket: #222e48;
 $brownchair: #39271c;
 $postgrey: #e0e0e0;
+$carmenAvg: #48535A;
+$kariLeft: #1E1D22;
 // Font Colors
 $action-color:  $peach;
 $secondary-action-color: $beige;

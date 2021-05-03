@@ -3,6 +3,15 @@ import Img from "gatsby-image";
 import { useWindowDimensions } from '../context/WindowDimensionsProvider';
 const Home = (props) => {
   const { windowHeight, windowWidth, footerHeight } = useWindowDimensions();
+  let objectPos = () => {
+    if(windowWidth < "768") {
+      return "25% 0%"
+    } else if(windowWidth < "999"){
+      return "20% 0%"
+    } else {
+      return "80% 0"
+    }
+  }
   return (
     <div className="frontHero" style={{height: windowHeight}}>
       <Img
@@ -17,7 +26,7 @@ const Home = (props) => {
          background: 'black'
        }}
        imgStyle={{
-         objectPosition: '50% 50%',
+         objectPosition: objectPos(),
          opacity: '1'
        }}
       />

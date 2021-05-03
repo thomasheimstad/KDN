@@ -24,8 +24,9 @@ export default class Bio extends React.Component {
     }
   }
   render = () => {
+    let props = this.props;
     return (
-      <Layout location={location}>
+      <Layout location={props.location}>
         <Helmet>
           <title>{`Bio | ${config.siteTitle}`}</title>
         </Helmet>
@@ -33,13 +34,16 @@ export default class Bio extends React.Component {
         <div className="frontBio flex center column basePadFullMobile">
           <HeroImg fluid={this.props.data.file.childImageSharp.fluid} posY="50%" posX="30%" divider="1.66"/>
           <article className="flex center column basePad">
-           <div className="flex column center" style={{width: '100%', paddingBottom: '2.5rem'}}>
+           <div className="flex column flexStart" style={{width: '100%', paddingBottom: '1rem'}}>
              <h1>KARI DAHL NIELSEN</h1>
              <h2>MEZZO SOPRANO</h2>
            </div>
            {this.state.lang === "eng" ? <EngBio /> : <NorBio/>}
-           <div className="flex center">
-             <div className={"button activeButton"}><h3 onClick={() => this.handleClick()} >{this.state.lang === "eng" ? "på norsk" : "in english"}</h3></div>
+           <div className="flex row" style={{width: '100%', textAlign: 'left', padding: '0'}}>
+             <div className={"button activeButton"}>
+             <p onClick={() => this.handleClick()}>
+              {this.state.lang === "eng" ? "på norsk" : "in english"}
+             </p></div>
            </div>
          </article>
        </div>
@@ -49,7 +53,7 @@ export default class Bio extends React.Component {
 }
 export const query = graphql`
   query kariBioImageQuery {
-    file(relativePath: { eq: "KariCherubino.jpg" }) {
+    file(relativePath: { eq: "karicarmenpromo1.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.

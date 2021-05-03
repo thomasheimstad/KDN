@@ -8,11 +8,11 @@ import useMeasure from './useMeasure'
 import useMedia from './useMedia'
 import Img from 'gatsby-image'
 
-export default function Masonry(propp) {
+const Masonry = (propp) => {
   const { windowHeight, windowWidth } = useWindowDimensions();
-  const heightList = () => {
+  const heightList = (column) => {
     let list = []
-    propp.postList.map(x => {
+    propp.postList.map((x,i) => {
       let image, height;
       image = new Image();
       image = x.img.childImageSharp.fluid.src;
@@ -33,17 +33,11 @@ export default function Masonry(propp) {
         })
       })
     })
-    let sortByKey = (array) => {
-      return array.sort((a,b) => {
-        a.height > b.height ? 1 : -1
-      })
-    }
-
-    return sortByKey(list);
+    return list;
   }
 
   const columns = useMedia(['(min-width: 1500px)', '(min-width: 1000px)', '(min-width: 768px)'], [4, 3, 2], 1)
-  const [bind, { width }] = useMeasure()
+  const [bind, { width }] = useMeasure(columns)
   const [items, set] = useState(heightList)
   {/*useEffect(() => {
     return () => void set(shuffle)
@@ -86,3 +80,4 @@ export default function Masonry(propp) {
     </div>
   )
 }
+export default Masonry;

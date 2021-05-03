@@ -4,8 +4,7 @@ const WindowDimensionsProvider = ({ children }) => {
 
   const [dimensions, setDimensions] = useState({
     windowWidth: '',
-    windowHeight: '',
-    footerHeight: '',
+    windowHeight: ''
   });
   const handleResize = () => {
     let w = window,

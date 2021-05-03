@@ -26,7 +26,7 @@ export default class HeroImg extends React.Component {
   }
   render = () => {
     return (
-      <div style={{position: 'relative', height: this.state.windowHeight/this.props.divider, width: '100%'}}>
+      <div style={{position: 'relative', height: this.state.windowHeight/this.props.divider, width: '100%', borderRadius: '5%'}}>
         <Img fluid={this.props.fluid} style={{
          position: 'absolute',
          left: 0,

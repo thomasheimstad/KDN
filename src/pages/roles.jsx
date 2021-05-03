@@ -5,7 +5,7 @@ import config from '../../data/SiteConfig';
 import Layout from '../components/layout';
 import Helmet from 'react-helmet';
 import Seo from '../components/modules/Seo';
-import RolesList from '../components/bio/RolesList';
+import RolesList2 from '../components/bio/RolesList2';
 
 export default class Roles extends React.Component {
   render = () => {
@@ -18,7 +18,7 @@ export default class Roles extends React.Component {
               childImageSharp {
                 # Specify the image processing specifications right in the query.
                 # Makes it trivial to update as your page's design changes.
-                fluid(maxWidth: 1920, quality: 50) {
+                fluid(maxWidth: 1920, quality: 90) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -31,9 +31,9 @@ export default class Roles extends React.Component {
              <title>{`Roles | ${config.siteTitle}`}</title>
            </Helmet>
            <Seo />
-           <div id="frontRoles" className="frontRoles flex center column basePadFullMobile">
+           <div className="frontRoles flex center column basePadFullMobile">
              <HeroImg fluid={data.file.childImageSharp.fluid} posY="50%" posX='20%' divider="1.66"/>
-             <RolesList />
+             <RolesList2 />
            </div>
          </Layout>
        )}

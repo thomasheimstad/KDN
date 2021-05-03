@@ -7,6 +7,7 @@ composer: 'Verdi'
 opera: 'La Traviata'
 orchestra: 'The Royal Danish Opera'
 conductor: 'Richard Farnes'
+img: '../img/logo-192x192.png'
 ---
 adja lksd Create a React.js component in your site directory at src/pages/calendar.js and this page will automatically refresh to show the new page component you created.
 
