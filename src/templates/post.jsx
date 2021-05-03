@@ -3,8 +3,6 @@ import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import UserInfo from "../components/UserInfo/UserInfo";
-import Disqus from "../components/Disqus/Disqus";
-import PostTags from "../components/PostTags/PostTags";
 import Seo from "../components/modules/Seo";
 import config from "../../data/SiteConfig";
 import "./b16-tomorrow-dark.css";
@@ -33,12 +31,7 @@ export default class PostTemplate extends React.Component {
             <h1>{post.title}</h1>
             <Img fluid={post.img.childImageSharp.fluid} />
             <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-            <div className="post-meta">
-              <PostTags tags={post.tags} />
-              <SocialLinks postPath={slug} postNode={postNode} />
-            </div>
             <UserInfo config={config} />
-            <Disqus postNode={postNode} />
           </div>
         </div>
       </Layout>
@@ -64,7 +57,6 @@ export const pageQuery = graphql`
         }
         date
         category
-        tags
       }
       fields {
         slug

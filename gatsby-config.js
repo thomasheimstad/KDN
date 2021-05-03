@@ -18,6 +18,7 @@ module.exports = {
       copyright: config.copyright
     }
   },
+  flags: { PRESERVE_WEBPACK_CACHE: true, DEV_SSR: true, FAST_DEV: true, PRESERVE_FILE_DOWNLOAD_CACHE: true, PARALLEL_SOURCING: true },
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-lodash",
@@ -180,7 +181,6 @@ module.exports = {
                       }
                       date
                       category
-                      tags
                     }
                   }
                 }

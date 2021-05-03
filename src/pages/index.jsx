@@ -11,7 +11,7 @@ import Footer from '../components/footer/Footer';
 
 const Index = (props) => {
   return (
-    <Layout location={location}>
+    <Layout location={props.location}>
       {/*<NavHome />*/}
       <Welcome />
       <Helmet title={config.siteTitle} />
