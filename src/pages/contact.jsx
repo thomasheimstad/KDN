@@ -4,7 +4,7 @@ import config from '../../data/SiteConfig';
 import Layout from "../components/layout";
 import Helmet from 'react-helmet';
 import Seo from '../components/modules/Seo';
-import ContactHero from "../components/modules/ContactHero";
+import Contacthero from "../components/modules/Contacthero";
 
 const Contact = (props) => {
   return (
@@ -14,7 +14,7 @@ const Contact = (props) => {
       </Helmet>
       <Seo />
 
-        <ContactHero constrained={props.data.file.childImageSharp.gatsbyImageData} />
+        <Contacthero constrained={props.data.file.childImageSharp.gatsbyImageData} />
      </Layout>
    )
  }

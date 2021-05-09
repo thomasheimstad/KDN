@@ -2,11 +2,11 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
-import PostListing from "../components/postlisting/PostListing";
+import Postlisting from "../components/postlisting/Postlisting";
 import config from "../../data/SiteConfig";
 const _ = require("lodash");
 
-const CategoryTemplate = (props) => {
+const Categorytemplate = (props) => {
     const { category } = props.pageContext;
     const postEdges = props.data.allMarkdownRemark.edges;
     return (
@@ -15,13 +15,13 @@ const CategoryTemplate = (props) => {
           <Helmet
             title={`${_.upperFirst(category)} | ${config.siteTitle}`}
           />
-          <PostListing
+          <Postlisting
             postEdges={postEdges} />
         </div>
       </Layout>
     );
   }
-  export default CategoryTemplate;
+  export default Categorytemplate;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`

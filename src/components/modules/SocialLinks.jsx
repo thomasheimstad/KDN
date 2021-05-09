@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'gatsby';
 import {FaFacebook, FaInstagram} from 'react-icons/fa';
 
-const SocialLinks = () => {
+const Sociallinks = () => {
   return(
     <ul className="buttons flex row center">
     <li>
@@ -18,4 +18,4 @@ const SocialLinks = () => {
     </ul>
   )
 }
-export default SocialLinks;
+export default Sociallinks;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EngBio = (props) => {
+const Engbio = (props) => {
   return (
     <div id="en" className="flex center column">
       <p>The lyric mezzo soprano Kari Dahl Nielsen was born and raised on the island Karmøy at the west coast of Norway. She is currently based in Copenhagen, where she will graduate from her studies with Susanna Eken at The Royal Opera Academy in June 2019. She received her bachelor's degree in classical voice from the Grieg Academy, University in Bergen, including one year in the Erasmus programme at Hochschule für Musik in Karlsruhe, Germany. She acquired her Master of Music from The Royal Danish Academy of Music in Copenhagen.</p>
@@ -9,4 +9,4 @@ const EngBio = (props) => {
     </div>
   )
 }
-export default EngBio;
+export default Engbio;

@@ -1,14 +1,13 @@
 import React, { Component } from "react";
-import FooterNavLinks from '../nav/FooterNavLinks';
-import SocialLinks from '../modules/SocialLinks';
+import Footernavlinks from '../nav/Footernavlinks';
+import Sociallinks from '../modules/Sociallinks';
 import config from "../../../data/SiteConfig";
 
-class Footer extends Component {
-  render() {
+const Footer = () => {
     return (
       <footer className="footer flex center column basePad">
         <div className="impressumAndNav flex row flexStart basePad">
-          <FooterNavLinks/>
+          <Footernavlinks/>
 
           <div className="impressum" >
             <p>
@@ -18,11 +17,10 @@ class Footer extends Component {
           </div>
         </div>
         <div className="footerSocialLinks">
-          <SocialLinks />
+          <Sociallinks />
         </div>
       </footer>
     );
   }
-}
 
 export default Footer;

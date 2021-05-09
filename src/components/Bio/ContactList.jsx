@@ -1,6 +1,6 @@
 import React from 'react';
 import {FaInstagram, FaFacebookSquare, FaEnvelope} from 'react-icons/fa';
-const ContactList = () => (
+const Contactlist = () => (
   <div className="contactList flex center column">
     <div className="flex spaceAround row">
       <a href="#"><FaInstagram size={32} /></a>
@@ -11,4 +11,4 @@ const ContactList = () => (
     </div>
   </div>
 )
-export default ContactList;
+export default Contactlist;

@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'gatsby';
 import {FaHome, FaInfo, FaCameraRetro, FaPhone, FaTheaterMasks} from 'react-icons/fa';
 
-const FooterNavLinks = () => {
+const Footernavlinks = () => {
   return (
     <ul className="flex column flexStart">
       <li>
@@ -39,4 +39,4 @@ const FooterNavLinks = () => {
     </ul>
   )
 }
-export default FooterNavLinks;
+export default Footernavlinks;

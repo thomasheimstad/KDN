@@ -2,7 +2,7 @@ import React from 'react';
 import { GatsbyImage } from "gatsby-plugin-image";
 import { useWindowDimensions } from '../context/WindowDimensionsProvider'
 
-const HeroImg = (props) => {
+const Heroimg = (props) => {
   const { windowHeight } = useWindowDimensions();
     return (
       <div style={{position: 'relative', height: windowHeight/props.divider, width: '100%', borderRadius: '5%'}}>
@@ -21,4 +21,4 @@ const HeroImg = (props) => {
    </div>
     )
   }
-export default HeroImg;
+export default Heroimg;

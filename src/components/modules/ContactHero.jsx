@@ -1,10 +1,10 @@
 import React from 'react';
 import { GatsbyImage } from "gatsby-plugin-image";
 import { useWindowDimensions } from '../context/WindowDimensionsProvider';
-import ContactInfo from './ContactInfo';
+import Contactinfo from './Contactinfo';
 
 
-const ContactHero = (props) => {
+const Contacthero = (props) => {
   const {windowHeight} = useWindowDimensions();
   return(
     <div className="frontHero contact" style={{height: windowHeight, width: '100%'}}>
@@ -25,8 +25,8 @@ const ContactHero = (props) => {
           opacity: '1'
         }}
        />
-       <ContactInfo />
+       <Contactinfo />
       </div>
   )
 }
-export default ContactHero;
+export default Contacthero;

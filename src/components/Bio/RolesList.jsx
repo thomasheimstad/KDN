@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-const RolesList = (props) => (
+const Roleslist = (props) => (
     <>
       <div className="flex frontRolesListWrapper column center basePad">
         <section className="flex column">
@@ -96,4 +96,4 @@ const RolesList = (props) => (
       </div>
     </>
   )
-export default RolesList;
+export default Roleslist;

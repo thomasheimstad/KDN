@@ -2,8 +2,8 @@ import React from 'react';
 import {MdFileDownload} from 'react-icons/md';
 import { GatsbyImage } from "gatsby-plugin-image";
 
-const GalleryImages = () => {
-  const {images} = this.props;
+const Galleryimages = (props) => {
+  const images = props.images;
     return (
       <div className="galleryImages flex">
           {images.map((x, i) => {
@@ -31,4 +31,4 @@ const GalleryImages = () => {
       </div>
     )
   }
-export default GalleryImages;
+export default Galleryimages;

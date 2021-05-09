@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import NavLinks from "./NavLinks";
+import Navlinks from "./Navlinks";
 
 const Nav = (props) => {
   const [scrolled, setScrolled] = useState(0);
@@ -18,7 +18,7 @@ const Nav = (props) => {
 
   return(
     <div className={scrolled < 100 ? "nav" : 'nav navBackground'}>
-      <NavLinks />
+      <Navlinks />
     </div>
 
   )

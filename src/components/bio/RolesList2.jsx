@@ -59,7 +59,7 @@ let sortRoles = (roller) => {
 }
 return roller.sort(compare);
 }
-const RolesList2 = (props) => {
+const Roleslist2 = (props) => {
   const sortedList = sortRoles(roles);
   return (
     <div className="rolesList flex center column basePad">
@@ -89,4 +89,4 @@ const RolesList2 = (props) => {
     </div>
   )
 }
-export default RolesList2;
+export default Roleslist2;

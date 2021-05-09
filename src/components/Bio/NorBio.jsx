@@ -1,5 +1,5 @@
 import React from 'react';
-const NorBio = () => {
+const Norbio = () => {
   return (
     <div id="nor" className="flex center column">
       <p>Den norske mezzosopranen Kari Dahl Nielsen vokste opp på Karmøy i Rogaland. Hun har siden 2014 vært bosatt i København hvor hun våren 2019 avslutter sin utdannelse hos Susanna Eken på Operaakademiet ved Det kongelige teater (DKT). Hun har tidligere fullført en bachelorgrad i utøvende musikk ved Griegakademiet, Universitetet i Bergen, inkludert et år i Erasmus-programmet ved Hochschule für Musik i Karlsruhe, Tyskland. i 2016 fullførte hun mastergraden ved Det kongelige danske musikkonservatorium i København.</p>
@@ -8,4 +8,4 @@ const NorBio = () => {
     </div>
   )
 }
-export default NorBio;
+export default Norbio;

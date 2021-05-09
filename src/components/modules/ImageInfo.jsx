@@ -3,7 +3,7 @@ import { GatsbyImage, getSrc } from "gatsby-plugin-image";
 import {MdFileDownload} from "react-icons/md";
 import { useWindowDimensions } from '../context/WindowDimensionsProvider';
 
-const ImageInfo = (props) => {
+const Imageinfo = (props) => {
   const { windowHeight} = useWindowDimensions();
   const imageSource = getSrc(props.post.img);
   return (
@@ -26,4 +26,4 @@ const ImageInfo = (props) => {
     </>
   )
 }
-export default ImageInfo;
+export default Imageinfo;

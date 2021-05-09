@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { Link } from "gatsby";
 import Masonry2 from '../../components/masonry/Masonry2';
 
-const PostListing = (props) => {
+const Postlisting = (props) => {
   let getPostList = () => {
     const postList = [];
     props.postEdges.forEach(postEdge => {
@@ -49,4 +49,4 @@ const PostListing = (props) => {
     }
   }
 
-export default PostListing;
+export default Postlisting;

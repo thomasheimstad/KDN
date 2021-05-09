@@ -2,12 +2,12 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
-import ImageInfo from "../components/modules/ImageInfo";
+import Imageinfo from "../components/modules/Imageinfo";
 import Seo from "../components/modules/Seo";
 import config from "../../data/SiteConfig";
 const _ = require("lodash");
 
-const ImageTemplate = (props) => {
+const Imagetemplate = (props) => {
   const { slug } = props.pageContext;
   const postNode = props.data.markdownRemark;
   const post = postNode.frontmatter;
@@ -23,11 +23,11 @@ const ImageTemplate = (props) => {
       <Helmet>
         <title>{`${_.upperFirst(post.title)} | ${config.siteTitle}`}</title>
       </Helmet>
-      <ImageInfo post={post} />
+      <Imageinfo post={post} />
     </Layout>
   );
 }
-export default ImageTemplate;
+export default Imagetemplate;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`

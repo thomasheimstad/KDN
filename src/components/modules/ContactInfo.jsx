@@ -20,7 +20,7 @@ let data = [
       link: 'https://www.instagram.com/karidahlnielsen'
     }
 ]
-const ContactInfo = () => {
+const Contactinfo = () => {
   let buttonChooser = (x) => {
     if(x==="+47 977 88 645"){
       return (<FaPhone size={24} />)
@@ -55,4 +55,4 @@ const ContactInfo = () => {
 )
 }
 
-export default ContactInfo;
+export default Contactinfo;

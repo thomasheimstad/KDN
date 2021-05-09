@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import Seo from "../components/modules/Seo";
 import config from "../../data/SiteConfig";
 
-const PostTemplate = (props) => {
+const Posttemplate = (props) => {
   const { slug } = props.pageContext;
   const postNode = props.data.markdownRemark;
   const post = postNode.frontmatter;
@@ -30,7 +30,7 @@ const PostTemplate = (props) => {
     </Layout>
   );
 }
-export default PostTemplate;
+export default Posttemplate;
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {

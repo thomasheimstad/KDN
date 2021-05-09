@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import {MdFileDownload} from "react-image/md";
 
-const GalleryView = (props) => {
+const Galleryview = (props) => {
   const { windowHeight, windowWidth, footerHeight } = useWindowDimensions();
   return(
     <div className="flex center column" style={{width: '100%'}}>
@@ -37,4 +37,4 @@ const GalleryView = (props) => {
     </div>
   )
 }
-export default GalleryView;
+export default Galleryview;
