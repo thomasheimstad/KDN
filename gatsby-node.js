@@ -1,15 +1,15 @@
 const path = require("path");
 const _ = require("lodash");
 const moment = require("moment");
-const siteConfig = require("./data/SiteConfig");
+const siteconfig = require("./data/Siteconfig");
 
 const postNodes = [];
 
 function addSiblingNodes(createNodeField) {
   postNodes.sort(
     ({ frontmatter: { date: date1 } }, { frontmatter: { date: date2 } }) => {
-      const dateA = moment(date1, siteConfig.dateFromFormat);
-      const dateB = moment(date2, siteConfig.dateFromFormat);
+      const dateA = moment(date1, siteconfig.dateFromFormat);
+      const dateB = moment(date2, siteconfig.dateFromFormat);
 
       if (dateA.isBefore(dateB)) return 1;
 
@@ -70,7 +70,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, "slug"))
         slug = `/${_.kebabCase(node.frontmatter.slug)}`;
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, "date")) {
-        const date = moment(node.frontmatter.date, siteConfig.dateFromFormat);
+        const date = moment(node.frontmatter.date, siteconfig.dateFromFormat);
         if (!date.isValid)
           console.warn(`WARNING: Invalid date.`, node.frontmatter);
 

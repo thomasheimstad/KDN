@@ -1,0 +1,82 @@
+.frontBio {
+  background: #1E1D22;
+  background: #323949;
+  background: $carmenAvg;
+  color: $secondary-font-color;
+  .contactList {
+    padding-top: $base-padding-y;
+    a {
+      padding: 0 0.5rem;
+    }
+  }
+  div {
+    z-index: 1;
+  }
+  article {
+    padding-bottom: 0;
+    @media screen and (max-width: 768px) {
+      padding-bottom: $mobile-padding-y;
+    }
+    p {
+      max-width: 70ch;
+      hyphens: none;
+      flex: 1;
+      letter-spacing: 1px;
+      text-align: justify;
+      color: inherit;
+      padding: 0;
+      padding-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    h1, h2, h4 {
+      line-height: 1;
+      color: $secondary-font-color;
+    }
+    h1 {
+      font-weight: 700;
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 0.1rem;
+      padding-top: 0;
+    }
+    h2 {
+      margin: 0;
+      padding-top: 0.5rem;
+      font-size: 1.3rem;
+      letter-spacing: 0.1rem;
+      color: darken($white, 50%);
+    }
+    h3 {
+      margin: 0;
+    }
+    .button {
+      cursor: pointer;
+      background: rgba($base-background-color,0.5);
+      border-radius: 5px;
+      p {
+        padding: 0.5rem 1rem;
+        transition: $base-in-timing $base-in-duration;
+        &:hover {
+          color: darken($action-color, 25%);
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      p {
+        font-size: 0.8rem;
+      }
+      h1 {
+        font-size: 1.2rem;
+      }
+      h2 {
+        font-size: 1rem;
+      }
+      h3 {
+        font-size: 0.7rem;
+      }
+      h4 {
+        font-size: 0.6rem;
+      }
+    }
+  }
+}
