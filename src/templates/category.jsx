@@ -2,7 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
-import PostListing from "../components/PostListing/PostListing";
+import PostListing from "../components/postlisting/PostListing";
 import config from "../../data/SiteConfig";
 const _ = require("lodash");
 
