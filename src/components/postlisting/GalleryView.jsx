@@ -1,7 +1,7 @@
 import React from 'react';
 import { useWindowDimensions } from '../context/WindowDimensionsProvider';
 import { Link } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import {MdFileDownload} from "react-image/md";
 
 const GalleryView = (props) => {
@@ -14,12 +14,12 @@ const GalleryView = (props) => {
           <div className="card" key={post.title} style={{padding: '0'}}>
             <Link to={post.path}>
               <div className="flex center">
-                <Img fluid={post.img.childImageSharp.fluid} style={{width: '400px'}}/>
+                <GatsbyImage image={post.img.childImageSharp.gatsbyImageData} style={{width: '400px'}}/>
                 <div className="flex center row">
                   <h4>Photo by: {post.photo}</h4>
                   <a
                     id="downloadImageButton"
-                    href={post.img.childImageSharp.fixed.src}
+                    href={post.img.childImageSharp.gatsbyImageData.src}
                     download={`Kari Dahl Nielsen - Photo by ${post.photo}.jpg`}
                     >
                     <MdFileDownload className="iconz" size={30} />

@@ -6,7 +6,7 @@ import { useWindowDimensions } from '../context/WindowDimensionsProvider'
 import shuffle from 'lodash/shuffle'
 import useMeasure from './useMeasure'
 import useMedia from './useMedia'
-import Img from 'gatsby-image'
+import {GatsbyImage, getSrc} from 'gatsby-plugin-image';
 
 const Masonry = (propp) => {
   const { windowHeight, windowWidth } = useWindowDimensions();
@@ -14,8 +14,10 @@ const Masonry = (propp) => {
     let list = []
     propp.postList.map((x,i) => {
       let image, height;
+      let imagePath = getSrc(x.img)
       image = new Image();
-      image = x.img.childImageSharp.fluid.src;
+      image = imagePath;
+      console.log(imagePath);
       let addImageProcess = (src) => {
         return new Promise((resolve, reject) => {
           let img = new Image()
@@ -26,9 +28,9 @@ const Masonry = (propp) => {
       }
       addImageProcess(image).then(height => {
         list.push({
-          css: x.img.childImageSharp.fluid.src,
+          css: imagePath,
           height: height,
-          fluid: x.img.childImageSharp.fluid,
+          constrained: x.img.childImageSharp.gatsbyImageData,
           path: x.path,
         })
       })
@@ -46,7 +48,6 @@ const Masonry = (propp) => {
     return () => void heightList();
     },
   [])
-
   let heights = new Array(columns).fill(0) // Each column gets a height starting with zero
   let gridItems = items.map((child, i) => {
     const column = heights.indexOf(Math.min(...heights)) // Basic masonry-grid placing, puts tile into the smallest column using Math.min
@@ -72,7 +73,7 @@ const Masonry = (propp) => {
               key={key}
               style={{ transform: xy.interpolate((x, y) => `translate3d(${x}px,${y}px,0)`), ...rest }}
               onClick={(()=> navigate(item.path))} >
-              <Img fluid={item.fluid} to={item.path} alt={`Photo by: `}/>
+              <GatsbyImage image={item.constrained} to={item.path} alt={`Photo by: `}/>
             </a.div>
           ))}
         </div>

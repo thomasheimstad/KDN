@@ -2,12 +2,10 @@ import React from "react";
 import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 import Layout from "../components/layout";
-import Nav from "../components/nav/Nav";
 import Welcome from "../components/modules/Welcome";
 import Seo from "../components/modules/Seo";
 import config from "../../data/SiteConfig";
 import Home from '../components/frontpage/Home';
-import Footer from '../components/footer/Footer';
 
 const Index = (props) => {
   return (
@@ -17,7 +15,7 @@ const Index = (props) => {
       <Helmet title={config.siteTitle} />
       <Seo />
       <Home
-      firstImage={props.data.firstImage.childImageSharp.fluid}
+      firstImage={props.data.file.childImageSharp.gatsbyImageData}
       />
     </Layout>
   )
@@ -25,11 +23,9 @@ const Index = (props) => {
 export default Index;
 export const query = graphql`
   query kariHomeImageQuery {
-    firstImage: file(relativePath: { eq: "KariLeft.jpg" }) {
+    file(relativePath: { eq: "Fjord.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 4000, quality: 90) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED, quality: 80)
       }
     }
   }

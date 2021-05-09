@@ -1,29 +1,30 @@
 import React from "react";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { useWindowDimensions } from '../context/WindowDimensionsProvider';
 const Home = (props) => {
-  const { windowHeight, windowWidth, footerHeight } = useWindowDimensions();
+  const { windowHeight, windowWidth } = useWindowDimensions();
   let objectPos = () => {
     if(windowWidth < "768") {
       return "25% 0%"
     } else if(windowWidth < "999"){
-      return "20% 0%"
+      return "20% 50%"
     } else {
-      return "80% 0"
+      return "100% 100%"
     }
   }
   return (
-    <div className="frontHero" style={{height: windowHeight}}>
-      <Img
-        fluid={props.firstImage}
+    <div className="frontHero" style={{height: windowHeight, width: '100%'}}>
+      <GatsbyImage
+        image={props.firstImage}
+        alt=""
         style={{
-         position: 'absolute',
-         left: 0,
-         top: 0,
-         width: "100%",
-         height: windowHeight,
-         zIndex: "-1",
-         background: 'black'
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          width: "100%",
+          height: '100%',
+          zIndex: "-1",
+          background: 'black'
        }}
        imgStyle={{
          objectPosition: objectPos(),

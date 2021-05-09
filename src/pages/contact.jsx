@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { graphql } from "gatsby";
 import config from '../../data/SiteConfig';
 import Layout from "../components/layout";
@@ -7,12 +7,6 @@ import Seo from '../components/modules/Seo';
 import ContactHero from "../components/modules/ContactHero";
 
 const Contact = (props) => {
-  const [scrollPosition, setScrollPosition] = useState();
-  useEffect(() => {
-  if (typeof window !== 'undefined' && window.scrollY !== 0) {
-    setScrollPosition(window.scrollY);
-  }
-}, []);
   return (
     <Layout location={props.location}>
       <Helmet>
@@ -20,7 +14,7 @@ const Contact = (props) => {
       </Helmet>
       <Seo />
 
-        <ContactHero fluid={props.data.file.childImageSharp.fluid} />
+        <ContactHero constrained={props.data.file.childImageSharp.gatsbyImageData} />
      </Layout>
    )
  }
@@ -29,9 +23,7 @@ export const query = graphql`
   query kariContactImageQuery {
     file(relativePath: { eq: "KariF.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1920, quality: 90) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
   }

@@ -1,7 +1,4 @@
 import React from 'react';
-import {Link} from 'gatsby';
-import { useWindowDimensions } from '../context/WindowDimensionsProvider';
-import {animated, useTransition, config} from 'react-spring';
 import {FaFacebook, FaPhone, FaInstagram} from 'react-icons/fa';
 import {IoMdMail} from 'react-icons/io';
 
@@ -24,14 +21,6 @@ let data = [
     }
 ]
 const ContactInfo = () => {
-  const { windowHeight, footerHeight } = useWindowDimensions();
-  const transitions = useTransition(data, item => item.name, {
-    unique: true,
-    trail: 1200 / data.length,
-    from: { opacity: 0, transform: 'scale(0)' },
-    enter: { opacity: 1, transform: 'scale(1)' },
-    leave: { opacity: 0, transform: 'scale(0)' }
-  })
   let buttonChooser = (x) => {
     if(x==="+47 977 88 645"){
       return (<FaPhone size={24} />)
@@ -46,26 +35,21 @@ const ContactInfo = () => {
       return (<FaInstagram size={24} />)
     }
   }
-  // This will orchestrate the two animations above, comment the last arg and it creates a sequence
   return(
    <div className="contactInfo flex center column basePad">
       <div className="contactInfoWrapper flex center column">
-      {transitions.map(({item, props, key }, index) => (
-       <animated.div
-            key={data[index].name}
-            className="trails-text"
-            style={{ props }}>
-            <animated.div style={ props }>
-              {
-                data[index].name.includes("facebook") || data[index].name.includes("instagram") || data[index].name.includes("gmail") || data[index].name.includes("977") ?
-                <a href={data[index].link} className="contactRow flex center row" target="_blank">
-                  {buttonChooser(data[index].name)}<h3>{data[index].name}</h3>
-                </a> :
-                  <h3>{data[index].name}</h3>
-              }
-            </animated.div>
-        </animated.div>
-      ))}
+        <a href={data[0].link} className="contactRow flex center row" target="_blank" rel="noreferrer">
+          {buttonChooser(data[0].name)}<h3>{data[0].name}</h3>
+        </a>
+        <a href={data[1].link} className="contactRow flex center row" target="_blank" rel="noreferrer">
+          {buttonChooser(data[1].name)}<h3>{data[1].name}</h3>
+        </a>
+        <a href={data[2].link} className="contactRow flex center row" target="_blank" rel="noreferrer">
+          {buttonChooser(data[2].name)}<h3>{data[2].name}</h3>
+        </a>
+        <a href={data[3].link} className="contactRow flex center row" target="_blank" rel="noreferrer">
+          {buttonChooser(data[3].name)}<h3>{data[3].name}</h3>
+        </a>
     </div>
   </div>
 )

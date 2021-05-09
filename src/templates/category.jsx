@@ -1,36 +1,33 @@
 import React from "react";
 import Helmet from "react-helmet";
-const _ = require("lodash");
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import PostListing from "../components/PostListing/PostListing";
 import config from "../../data/SiteConfig";
+const _ = require("lodash");
 
-export default class CategoryTemplate extends React.Component {
-  render() {
-    const { category } = this.props.pageContext;
-    const postEdges = this.props.data.allMarkdownRemark.edges;
+const CategoryTemplate = (props) => {
+    const { category } = props.pageContext;
+    const postEdges = props.data.allMarkdownRemark.edges;
     return (
-      <Layout location={this.props.location}>
+      <Layout location={props.location}>
         <div className="category-container">
           <Helmet
             title={`${_.upperFirst(category)} | ${config.siteTitle}`}
           />
           <PostListing
-            postEdges={postEdges}
-            calendarView={this.props.data.calendarView.childImageSharp.fluid} />
+            postEdges={postEdges} />
         </div>
       </Layout>
     );
   }
-}
+  export default CategoryTemplate;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query CategoryPage($category: String) {
     allMarkdownRemark: allMarkdownRemark(
-      limit: 1000
-      sort: { fields: [fields___date], order: DESC }
+      limit: 1000,
       filter: { frontmatter: { category: { eq: $category } } }
     ) {
       totalCount
@@ -38,32 +35,19 @@ export const pageQuery = graphql`
         node {
           fields {
             slug
-            date
           }
           excerpt
           timeToRead
           frontmatter {
             title
             category
+            date
             img {
               childImageSharp {
-                fixed(width: 340, height: 250) {
-                  ...GatsbyImageSharpFixed
-                }
-                fluid(maxWidth: 1000) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(layout: CONSTRAINED, quality: 20)
               }
             }
-            date
           }
-        }
-      }
-    }
-    calendarView: file(relativePath: { eq: "kari.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
         }
       }
     }

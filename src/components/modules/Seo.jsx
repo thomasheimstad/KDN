@@ -18,10 +18,10 @@ class Seo extends Component {
         : postNode.excerpt;
       if(!(Object.hasOwnProperty(postMeta, "img"))){
         image = ''
-      } else if(typeof(postMeta.img.childImageSharp.fluid) !== 'undefined') {
-        image = image = postMeta.img.childImageSharp.fluid.src
+      } else if(typeof(postMeta.img.childImageSharp.gatsbyImageData) !== 'undefined') {
+        image = image = postMeta.img.childImageSharp.gatsbyImageData.src
       } else {
-        image = postMeta.img.childImageSharp.fixed.src;
+        image = postMeta.img.childImageSharp.gatsbyImageData;
       }
       postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
     } else {

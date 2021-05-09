@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useState, useEffect} from "react";
 import Helmet from "react-helmet";
 import WindowDimensionsProvider from '../components/context/WindowDimensionsProvider';
 import siteConfig from "../../data/SiteConfig";
@@ -16,30 +16,22 @@ const AniWrapper = (props) => {
     </animated.div>
   )
 }
-export default class Layout extends React.Component {
-  state = {
-    myLocation: ''
-  }
-  componentDidMount = () => {
-    this.setState({
-      myLocation: location
-    })
-  }
-  render() {
-    const { children, location } = this.props;
-    let handleClicker = () => {
-      console.log(this.state.myLocation)
-    }
+const Layout = (props) => {
+  let [myLocation, setMyLocation] = useState("");
+  useEffect(()=>{
+    setMyLocation(props.location.pathname);
+  },[])
+  const { children } = props;
 
     return (
       <>
         <WindowDimensionsProvider>
           <Helmet>
-            <title>{`${config.siteTitle} |  `}</title>
+            <title>{`${siteConfig.siteTitle} |  `}</title>
             <meta name="description" content={config.siteDescription} />
             <link rel='shortcut icon' type='image/png' href={`${favicon}`} />
           </Helmet>
-          {this.state.myLocation.pathname === "/" ? '' : <Nav/>}
+          {myLocation === "/" ? '' : <Nav/>}
           {/*<Transition>{children}</Transition>*/}
           {/*<Transition keys={location.pathname}
             from={{ opacity: 0, transform: 'translate3d(100%,0,0)' }}
@@ -53,8 +45,8 @@ export default class Layout extends React.Component {
           <AniWrapper>
             {children}
           </AniWrapper>
-          { this.state.myLocation.pathname === "/" ||
-            this.state.myLocation.pathname === "/contacts" ?
+          { myLocation === "/" ||
+            myLocation === "/contacts" ?
             '' :
             <Footer />
           }
@@ -62,4 +54,4 @@ export default class Layout extends React.Component {
       </>
     );
   }
-}
+  export default Layout;

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "gatsby";
 import FooterNavLinks from '../nav/FooterNavLinks';
 import SocialLinks from '../modules/SocialLinks';
 import config from "../../../data/SiteConfig";

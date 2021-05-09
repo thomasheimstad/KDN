@@ -1,6 +1,5 @@
 footer {
-  background: darken($kariLeft, 7%);
-  background: darken($navy, 10%);
+  background: $footer-background-color;
   p,h3,svg {
     color: $secondary-font-color;
     transition: $base-in-timing $base-in-duration;

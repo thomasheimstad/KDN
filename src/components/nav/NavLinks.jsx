@@ -1,7 +1,6 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {Link} from 'gatsby';
 import {FaHome, FaInfo, FaCameraRetro, FaPhone, FaTheaterMasks} from 'react-icons/fa';
-import {IoMdCalendar} from 'react-icons/io';
 
 const NavLinks = () => {
   return (

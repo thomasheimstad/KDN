@@ -20,9 +20,6 @@
       cursor: pointer;
       transition: $base-in-duration $base-in-timing;
     }
-    &:hover .gatsby-image-wrapper img {
-      filter: grayscale(100%);
-    }
   }
 
   .list > div > div {
@@ -37,5 +34,26 @@
     line-height: 10px;
     border-radius: 2px;
     box-shadow: 0px 10px 50px -10px rgba(0, 0, 0, 0.2);
+  }
+}
+.gallery {
+  > div {
+    margin: 0;
+    background: $footer-background-color;
+    transition: $base-in-timing $base-in-duration;
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover img {
+      transform: scale(1.02);
+    }
+    .gatsby-image-wrapper {
+      img {
+        transition: $base-in-timing $base-in-duration;
+      }
+    }
+  }
+  .gatsby-image-wrapper {
   }
 }

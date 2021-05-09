@@ -2,7 +2,7 @@
 category: "gallery"
 title: "imageone"
 photo: "Test Testesen"
-img: '../img/KariRightRight.jpg'
+img: '../img/KariCherubino.jpg'
 date: "2019-01-01"
 
 ---

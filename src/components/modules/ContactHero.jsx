@@ -1,5 +1,5 @@
 import React from 'react';
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { useWindowDimensions } from '../context/WindowDimensionsProvider';
 import ContactInfo from './ContactInfo';
 
@@ -8,8 +8,9 @@ const ContactHero = (props) => {
   const {windowHeight} = useWindowDimensions();
   return(
     <div className="frontHero contact" style={{height: windowHeight, width: '100%'}}>
-      <Img
-       fluid={props.fluid}
+      <GatsbyImage
+       image={props.constrained}
+       alt=""
        style={{
           position: 'absolute',
           left: 0,

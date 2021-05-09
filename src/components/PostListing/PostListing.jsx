@@ -1,23 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "gatsby";
-import Masonry from '../../components/masonry/Masonry';
-import Calendar from './Calendar';
-class PostListing extends React.Component {
-  state = {
-    view: 'default'
-  }
-  componentDidMount = () => {
-    let postList = this.getPostList();
-    this.setState({
-      view: postList[0].category
-    })
-  }
-  getPostList() {
+import Masonry2 from '../../components/masonry/Masonry2';
+
+const PostListing = (props) => {
+  let getPostList = () => {
     const postList = [];
-    this.props.postEdges.forEach(postEdge => {
+    props.postEdges.forEach(postEdge => {
       postList.push({
         path: postEdge.node.fields.slug,
-        tags: postEdge.node.frontmatter.tags,
         img: postEdge.node.frontmatter.img,
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
@@ -35,17 +25,21 @@ class PostListing extends React.Component {
     });
     return postList;
   }
-  render = () => {
-    const postList = this.getPostList();
-    if(this.state.view == "gallery") {
-      return ( <Masonry postList={postList} /> )
-    } else if(this.state.view == "calendar") {
-      return ( <Calendar postList={postList} />)
+  let [stateView] = useState(getPostList);
+    if(stateView[0].category === "gallery") {
+      return ( <Masonry2
+        itemsPerRow={[2,3]} // This will be changed to `[2, 3]` later
+        images={stateView.map((x) => ({
+        ...x.img.childImageSharp.gatsbyImageData,
+        caption: `${x.title} – ${x.photo}`,
+        path: x.path
+      }))}
+        /> )
     } else {
       return (
         <div>
           {/* Your post list here. */
-          postList.map(post => (
+          stateView.map(post => (
             <Link to={post.path} key={post.title}>
               <h1>{post.title}</h1>
             </Link>
@@ -54,6 +48,5 @@ class PostListing extends React.Component {
       );
     }
   }
-}
 
 export default PostListing;

@@ -4,38 +4,33 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import Seo from "../components/modules/Seo";
 import config from "../../data/SiteConfig";
-import "./b16-tomorrow-dark.css";
-import "./post.css";
-import Img from 'gatsby-image';
 
-export default class PostTemplate extends React.Component {
-  render() {
-    const { slug } = this.props.pageContext;
-    const postNode = this.props.data.markdownRemark;
-    const post = postNode.frontmatter;
-    if (!post.id) {
-      post.id = slug;
-    }
-    if (!post.category_id) {
-      post.category_id = config.postDefaultCategoryID;
-    }
-    return (
-      <Layout location={this.props.location}>
-        <div>
-          <Helmet>
-            <title>{`${post.title} | ${config.siteTitle}`}</title>
-          </Helmet>
-          {/*<Seo postPath={slug} postNode={postNode} postSEO />*/}
-          <div>
-            <h1>{post.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-          </div>
-        </div>
-      </Layout>
-    );
+const PostTemplate = (props) => {
+  const { slug } = props.pageContext;
+  const postNode = props.data.markdownRemark;
+  const post = postNode.frontmatter;
+  if (!post.id) {
+    post.id = slug;
   }
+  if (!post.category_id) {
+    post.category_id = config.postDefaultCategoryID;
+  }
+  return (
+    <Layout location={props.location}>
+      <div>
+        <Helmet>
+          <title>{`${post.title} | ${config.siteTitle}`}</title>
+        </Helmet>
+        <Seo postPath={slug} postNode={postNode} postSEO />
+        <div>
+          <h1>{post.title}</h1>
+          <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+        </div>
+      </div>
+    </Layout>
+  );
 }
-
+export default PostTemplate;
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -47,18 +42,14 @@ export const pageQuery = graphql`
         title
         img {
           childImageSharp {
-              fluid(maxWidth: 1920, quality: 50) {
-                ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: CONSTRAINED)
           }
         }
         date
         category
-        tags
       }
       fields {
         slug
-        date
       }
     }
   }

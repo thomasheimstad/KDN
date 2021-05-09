@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import config from '../../data/SiteConfig';
 import {graphql} from 'gatsby';
 import HeroImg from '../components/modules/HeroImg';
@@ -8,41 +8,33 @@ import Seo from '../components/modules/Seo';
 import EngBio from '../components/bio/EngBio';
 import NorBio from '../components/bio/NorBio';
 
-export default class Bio extends React.Component {
-  state = {
-    lang: 'eng'
-  }
-  handleClick = () => {
-    if(this.state.lang === "eng"){
-      this.setState({
-        lang: "nor"
-      })
+const Bio = (props) => {
+  const [stateLang, setStateLang] = useState('eng')
+  let handleClick = () => {
+    if(stateLang === "eng"){
+      setStateLang("nor")
     } else {
-      this.setState({
-        lang: "eng"
-      })
+      setStateLang("eng")
     }
   }
-  render = () => {
-    let props = this.props;
-    return (
+  return(
       <Layout location={props.location}>
         <Helmet>
           <title>{`Bio | ${config.siteTitle}`}</title>
         </Helmet>
         <Seo />
         <div className="frontBio flex center column basePadFullMobile">
-          <HeroImg fluid={this.props.data.file.childImageSharp.fluid} posY="50%" posX="30%" divider="1.66"/>
+          <HeroImg constrained={props.data.file.childImageSharp.gatsbyImageData} posY="50%" posX="30%" divider="1.66"/>
           <article className="flex center column basePad">
            <div className="flex column flexStart" style={{width: '100%', paddingBottom: '1rem'}}>
              <h1>KARI DAHL NIELSEN</h1>
              <h2>MEZZO SOPRANO</h2>
            </div>
-           {this.state.lang === "eng" ? <EngBio /> : <NorBio/>}
+           {stateLang === "eng" ? <EngBio /> : <NorBio/>}
            <div className="flex row" style={{width: '100%', textAlign: 'left', padding: '0'}}>
              <div className={"button activeButton"}>
-             <p onClick={() => this.handleClick()}>
-              {this.state.lang === "eng" ? "på norsk" : "in english"}
+             <p onClick={() => handleClick()}>
+              {stateLang === "eng" ? "på norsk" : "in english"}
              </p></div>
            </div>
          </article>
@@ -50,16 +42,12 @@ export default class Bio extends React.Component {
      </Layout>
     )
   }
-}
+export default Bio;
 export const query = graphql`
   query kariBioImageQuery {
     file(relativePath: { eq: "karicarmenpromo1.jpg" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 1920, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
   }
