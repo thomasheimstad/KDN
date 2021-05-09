@@ -129,7 +129,6 @@ exports.createPages = ({ graphql, actions }) => {
         const tagSet = new Set();
         const categorySet = new Set();
         result.data.allMarkdownRemark.edges.forEach(edge => {
-
           if (edge.node.frontmatter.category) {
             categorySet.add(edge.node.frontmatter.category);
           }
@@ -142,7 +141,8 @@ exports.createPages = ({ graphql, actions }) => {
                 slug: edge.node.fields.slug
               }
             });
-          } else {
+          }
+          if(edge.node.frontmatter.category ==! "gallery") {
             createPage({
               path: edge.node.fields.slug,
               component: postPage,
