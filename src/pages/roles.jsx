@@ -24,7 +24,7 @@ const Roles = (props) => {
 export default Roles;
 export const query = graphql`
   query kariRolesImageQuery {
-    file(relativePath: { eq: "kariothello.jpg" }) {
+    file(relativePath: { eq: "emilia5.jpg" }) {
       childImageSharp {
         gatsbyImageData(layout: CONSTRAINED)
       }

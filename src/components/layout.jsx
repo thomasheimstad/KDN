@@ -20,7 +20,7 @@ const Layout = (props) => {
   let [myLocation, setMyLocation] = useState("");
   useEffect(()=>{
     setMyLocation(props.location.pathname);
-  },[])
+  },[props.location.pathname])
   const { children } = props;
 
     return (
@@ -46,7 +46,7 @@ const Layout = (props) => {
             {children}
           </AniWrapper>
           { myLocation === "/" ||
-            myLocation === "/contacts" ?
+            myLocation == "/contact/"  ?
             '' :
             <Footer />
           }

@@ -45,7 +45,7 @@ const Bio = (props) => {
 export default Bio;
 export const query = graphql`
   query kariBioImageQuery {
-    file(relativePath: { eq: "karicarmenpromo1.jpg" }) {
+    file(relativePath: { eq: "carmen3.jpg" }) {
       childImageSharp {
         gatsbyImageData(layout: CONSTRAINED)
       }

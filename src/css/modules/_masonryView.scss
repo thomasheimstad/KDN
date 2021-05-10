@@ -37,16 +37,20 @@
   }
 }
 .gallery {
-  > div {
+  background: $footer-background-color;
+  width: 100%;
+  .imageWrapper {
     margin: 0;
+    padding: 0;
     background: $footer-background-color;
     transition: $base-in-timing $base-in-duration;
+    display: inline-flex;
     &:hover {
       cursor: pointer;
     }
 
     &:hover img {
-      transform: scale(1.02);
+      transform: scale(1.05);
     }
     .gatsby-image-wrapper {
       img {
@@ -54,6 +58,25 @@
       }
     }
   }
-  .gatsby-image-wrapper {
+  .buttons {
+    .button {
+      padding: 1rem;
+      margin: 0 1rem;
+      border-radius: 3px;
+      box-shadow: 0;
+      border-bottom: 1px solid transparent;
+      h3 {
+        color: darken($secondary-font-color, 40%);
+        box-shadow: 0;
+      }
+      &:hover h3 {
+        color: $action-color;
+        box-shadow: 0 0 0 0;
+      }
+      &:hover {
+        box-shadow: 0 0 0 0;
+        border-bottom: 1px solid $action-color;
+      }
+    }
   }
 }

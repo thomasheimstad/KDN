@@ -1,11 +1,24 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {GatsbyImage} from 'gatsby-plugin-image';
 import { chunk, sum } from 'lodash';
 import { Box } from 'rebass';
 import { navigate } from "gatsby";
 
 const Masonry2 = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
-  const aspectRatios = images.map(image => {
+  const imageListPortraitSort = () => {
+    let portraits = images.filter(x=> x.caption.includes("Portraits"));
+    portraits.sort((a,b)=> a.caption - b.caption)
+    return portraits;
+  }
+  const imageListStillsSort = () => {
+    let stills = images.filter(x=> x.caption.includes("KGLTeater"));
+    stills.sort((a,b)=> a.caption - b.caption)
+    return stills;
+  }
+  const [imageList, setImageList] = useState(imageListPortraitSort);
+  const [imageCategory, setImageCategory] = useState('Portraits');
+
+  const aspectRatios = imageList.map(image => {
     let aspectRatio = image.width/image.height;
     return aspectRatio;
   });
@@ -19,10 +32,23 @@ const Masonry2 = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
         sum(rowAspectRatios),
       ),
   );
+  let handleClick = (o) => {
+    if(o==="Portraits"){
+      setImageList(imageListPortraitSort);
+    } else {
+      setImageList(imageListStillsSort);
+    }
+  }
   return (
-    <div className="gallery">
-      {images.map((image, i) => (
+    <div className="gallery basePad" style={{paddingBottom: '0'}}>
+      <div className="flex center basePad buttons">
+        <div className="button" onClick={(()=>handleClick('Portraits'))}><h3>Portraits</h3></div>
+        <div className="button" onClick={(()=>handleClick('KGLTeater'))}><h3>Stills</h3></div>
+      </div>
+      <div className="imageListWrapper flex center wrap">
+      {imageList.map((image, i) => (
         <Box
+          className="imageWrapper"
           key={image.caption}
           image={image}
           title={image.caption}
@@ -35,11 +61,11 @@ const Masonry2 = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
               const aspectRatio = image.width/image.height;
               return `${(aspectRatio / rowAspectRatioSum) * 100}%`;
             },
-          )}
-          css={{ display: 'inline-block' }}>
-            <GatsbyImage image={image} to={image.path} alt={`Photo by: `} onClick={(()=> navigate(image.path))} />
+          )}>
+            <GatsbyImage image={image} to={image.path} alt={image.caption} onClick={(()=> navigate(image.path))} />
           </Box>
       ))}
+      </div>
     </div>
   );
 };

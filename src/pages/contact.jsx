@@ -13,7 +13,6 @@ const Contact = (props) => {
         <title>{`CONTACT | ${config.siteTitle}`}</title>
       </Helmet>
       <Seo />
-
         <Contacthero constrained={props.data.file.childImageSharp.gatsbyImageData} />
      </Layout>
    )
@@ -21,7 +20,7 @@ const Contact = (props) => {
 export default Contact;
 export const query = graphql`
   query kariContactImageQuery {
-    file(relativePath: { eq: "KariF.jpg" }) {
+    file(relativePath: { eq: "emilia3.jpg" }) {
       childImageSharp {
         gatsbyImageData(layout: CONSTRAINED)
       }

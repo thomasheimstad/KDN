@@ -15,8 +15,7 @@ const Categorytemplate = (props) => {
           <Helmet
             title={`${_.upperFirst(category)} | ${config.siteTitle}`}
           />
-          <Postlisting
-            postEdges={postEdges} />
+          <Postlisting postEdges={postEdges} />
         </div>
       </Layout>
     );
@@ -42,6 +41,7 @@ export const pageQuery = graphql`
             title
             category
             date
+            photo
             img {
               childImageSharp {
                 gatsbyImageData(layout: CONSTRAINED, quality: 20)

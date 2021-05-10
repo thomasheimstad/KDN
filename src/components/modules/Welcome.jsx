@@ -6,19 +6,19 @@ const Welcome = () => {
   let data = [
       {
         name: 'Bio',
-        link: '/bio'
+        link: '/bio/'
       },
       {
         name: 'Roles',
-        link: '/roles',
+        link: '/roles/',
       },
       {
         name: 'Gallery',
-        link: '/gallery',
+        link: '/gallery/',
       },
       {
         name: 'Contact',
-        link: '/contact',
+        link: '/contact/',
       },
   ]
   let buttonChooser = (x) => {

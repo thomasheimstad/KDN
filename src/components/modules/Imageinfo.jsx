@@ -16,7 +16,7 @@ const Imageinfo = (props) => {
           <a
             id="downloadImageButton"
             href={imageSource}
-            download={`Kari Dahl Nielsen - Photo by ${props.post.photo}.jpg`}
+            download={`${props.post.title}-photo-${props.post.photo}.jpg`}
             >
             <div className="button"><MdFileDownload className="iconz" size={30} /></div>
           </a>

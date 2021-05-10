@@ -12,22 +12,22 @@ const NavLinks = () => {
       </li>
 
       <li>
-        <Link to="/bio" activeClassName="activeNav">
+        <Link to="/bio/" activeClassName="activeNav">
           <FaInfo size={34} />
         </Link>
       </li>
       <li>
-        <Link to="/roles" activeClassName="activeNav">
+        <Link to="/roles/" activeClassName="activeNav">
           <FaTheaterMasks size={34} />
         </Link>
       </li>
       <li>
-        <Link to="/gallery" activeClassName="activeNav">
+        <Link to="/gallery/" activeClassName="activeNav">
           <FaCameraRetro size={34} />
         </Link>
       </li>
       <li>
-        <Link to="/contact" activeClassName="activeNav">
+        <Link to="/contact/" activeClassName="activeNav">
           <FaPhone size={34} />
         </Link>
       </li>

@@ -5,7 +5,7 @@ import { useWindowDimensions } from '../context/WindowDimensionsProvider'
 const Heroimg = (props) => {
   const { windowHeight } = useWindowDimensions();
     return (
-      <div style={{position: 'relative', height: windowHeight/props.divider, width: '100%', borderRadius: '5%'}}>
+      <div style={{position: 'relative', height: '400px', width: '100%', borderRadius: '5%'}}>
         <GatsbyImage image={props.constrained} alt="" style={{
          position: 'absolute',
          left: 0,

@@ -9,6 +9,7 @@ const Postlisting = (props) => {
       postList.push({
         path: postEdge.node.fields.slug,
         img: postEdge.node.frontmatter.img,
+        photo: postEdge.node.frontmatter.photo,
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
         excerpt: postEdge.node.excerpt,
