@@ -1,7 +1,8 @@
 .contact {
   overflow: hidden;
+  background: $footer-background-color;
+  height: 100%;
   .contactInfo {
-    height: 100%;
     z-index: 1;
     justify-content: flex-end;
     align-items: center;

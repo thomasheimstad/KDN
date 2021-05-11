@@ -8,7 +8,7 @@ const Contacthero = (props) => {
   const {windowHeight} = useWindowDimensions();
   return(
     <div className="frontHero contact flex center column" style={{height: windowHeight, width: '100%'}}>
-      <GatsbyImage
+      {/*<GatsbyImage
        image={props.constrained}
        alt=""
        style={{
@@ -24,7 +24,7 @@ const Contacthero = (props) => {
           objectPosition: '50% 50%',
           opacity: '1'
         }}
-       />
+       />*/}
        <Contactinfo />
       </div>
   )

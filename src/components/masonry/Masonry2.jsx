@@ -7,12 +7,10 @@ import { navigate } from "gatsby";
 const Masonry2 = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
   const imageListPortraitSort = () => {
     let portraits = images.filter(x=> x.caption.includes("Portraits"));
-    portraits.sort((a,b)=> a.caption - b.caption)
     return portraits;
   }
   const imageListStillsSort = () => {
     let stills = images.filter(x=> x.caption.includes("KGLTeater"));
-    stills.sort((a,b)=> a.caption - b.caption)
     return stills;
   }
   const [imageList, setImageList] = useState(imageListPortraitSort);

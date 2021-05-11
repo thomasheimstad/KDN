@@ -33,7 +33,8 @@ const Postlisting = (props) => {
         images={stateView.map((x) => ({
         ...x.img.childImageSharp.gatsbyImageData,
         caption: `${x.title} – ${x.photo}`,
-        path: x.path
+        path: x.path,
+        date: x.date,
       }))}
         /> )
     } else {

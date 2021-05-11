@@ -46,7 +46,7 @@ const Layout = (props) => {
             {children}
           </AniWrapper>
           { myLocation === "/" ||
-            myLocation == "/contact/"  ?
+            myLocation === "/contacts"  ?
             '' :
             <Footer />
           }
