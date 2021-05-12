@@ -6,7 +6,7 @@ import config from "../../../data/Siteconfig";
 const Footer = () => {
     return (
       <footer className="footer flex center column basePad">
-        <div className="impressumAndNav flex row flexStart basePad">
+        <div className="impressumAndNav flex row flexStart">
           <Footernavlinks/>
 
           <div className="impressum" >

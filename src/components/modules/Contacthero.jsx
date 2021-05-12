@@ -7,7 +7,7 @@ import Contactinfo from './Contactinfo';
 const Contacthero = (props) => {
   const {windowHeight} = useWindowDimensions();
   return(
-    <div className="frontHero contact flex center column" style={{height: windowHeight, width: '100%'}}>
+    <div className="frontHero contact flex center column" style={{width: '100%'}}>
       {/*<GatsbyImage
        image={props.constrained}
        alt=""

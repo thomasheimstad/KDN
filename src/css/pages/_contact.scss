@@ -1,7 +1,10 @@
 .contact {
   overflow: hidden;
   background: $footer-background-color;
-  height: 100%;
+  height: 800px;
+  @media screen and (max-width: 768px){
+    height: 600px;
+  }
   .contactInfo {
     z-index: 1;
     justify-content: flex-end;
@@ -14,8 +17,10 @@
       text-align: left;
     }
     h3 {
-      font-size: 100%;
       padding: 1rem 0rem 1rem 1rem;
+      @media screen and (max-width:768px){
+        font-size: 0.9rem;
+      }
     }
     a,h3 {
       &:hover svg, &:hover h3 {
