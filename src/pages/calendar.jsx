@@ -7,8 +7,8 @@ import Seo from '../components/modules/Seo';
 import config from '../../data/Siteconfig';
 
 const Calendar = (props) => {
-  let calendarID="testtesttest";
-  let apiKey="testtesttest";
+  let calendarID = process.env.GOOGLE_CAL_ID
+  let apiKey = process.env.GOOGLE_CAL_API_KEY
 
   const [calendarItems, setCalendarItems] = useState({});
 
