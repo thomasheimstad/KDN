@@ -2,8 +2,73 @@ import React from 'react';
 
 const roles = [
   {
+    composer: "Adams",
+    operas: [
+      {
+        title: "Nixon in China",
+        role: "2. Secretary"
+      },
+    ]
+  },
+  {
+    composer: "Bizet",
+    operas:
+    [
+      {
+        title: "Carmen",
+        role: "Mercédès"
+      }
+    ]
+  },
+  {
+    composer: "Bruce",
+    operas:
+    [
+      {
+        title: "Nothing",
+        role: "Agnes"
+      }
+    ]
+  },
+  {
+    composer: "Gounod",
+    operas:
+    [
+      {
+        title: "Faust",
+        role: "Sibel"
+      }
+    ]
+  },
+  {
+    composer: "Händel",
+    operas: [
+      {
+          title: "Alcina",
+          role: "Ruggiero & Bradamante"
+      },
+      {
+        title: "Ariodante",
+        role: "Ariodante"
+      }
+    ]
+  },
+  {
+    composer: "Monteverdi",
+    operas: [
+      {
+        title: "L’incoronazione di Poppea",
+        role: "Ottavia"
+      }
+    ]
+  },
+  {
     composer: "Verdi",
     operas: [
+      {
+        title: "La Traviata",
+        role: "Flora"
+      },
       {
         title: "Otello",
         role: "Emilia"
@@ -19,25 +84,36 @@ const roles = [
     operas: [
       {
         title: "Cosí fan Tutte",
-        role: "Soppidoppi"
+        role: "Dorabella"
+      },
+      {
+        title: "Die Zauberflöte",
+        role: "2. Dame"
+      },
+      {
+        title: "Don Giovanni",
+        role: "Zerlina"
+      },
+      {
+        title: "Le nozze di Figaro",
+        role: "Cherubino"
+      },
+      {
+        title: "Mitridate",
+        role: "Arbate"
+      },
+      {
+        title: "Requiem",
+        role: "Alto"
       },
     ]
   },
   {
-    composer: "Beethoven",
+    composer: "Wagner",
     operas: [
       {
-        title: "Fidelio",
-        role: "Mrs. Mushimushi"
-      },
-    ]
-  },
-  {
-    composer: "Britten",
-    operas: [
-      {
-        title: "Sailer Mr. Bailerfailer",
-        role: "Starstruck superfan"
+        title: "Parsifal",
+        role: "Blumenmädchen"
       },
     ]
   },

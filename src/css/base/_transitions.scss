@@ -12,16 +12,22 @@
   transform: translate3d(0,0,0);
   opacity: 0;
   z-index: 1;
+  flex: 0;
+  transition: $base-in-timing $base-in-duration;
 }
 .fade-enter.fade-enter-active {
   transform: translate3d(0,0,0);
   opacity: 1;
+  flex: 1;
   transition: opacity $base-in-duration $base-in-timing;
 }
 .fadeIn{
   transform: translate3d(0,0,0);
-  transition: $base-out-timing $base-out-duration;
+  transition: $base-in-timing $base-in-duration*3;
   opacity: 1;
+  display: flex;
+  flex: 0;
+  max-height: 50rem;
   background: rgba(0,0,0,0);
 }
 .fadeOut {
@@ -31,6 +37,9 @@
   visibility: 0;
   margin:0;
   padding:0;
+  display: flex;
+  flex: 1;
+  max-height: 0;
   box-sizing: border-box;
   box-shadow: 0;
   background: rgba(0,0,0,0);

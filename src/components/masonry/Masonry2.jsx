@@ -3,6 +3,7 @@ import {GatsbyImage} from 'gatsby-plugin-image';
 import { chunk, sum } from 'lodash';
 import { Box } from 'rebass';
 import { navigate } from "gatsby";
+import {useGalleryProvider} from '../context/GalleryProvider';
 
 const Masonry2 = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
   const imageListPortraitSort = () => {
@@ -14,7 +15,6 @@ const Masonry2 = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
     return stills;
   }
   const [imageList, setImageList] = useState(imageListPortraitSort);
-  const [imageCategory, setImageCategory] = useState('Portraits');
 
   const aspectRatios = imageList.map(image => {
     let aspectRatio = image.width/image.height;
@@ -30,7 +30,10 @@ const Masonry2 = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
         sum(rowAspectRatios),
       ),
   );
-  let handleClick = (o) => {
+  let handleClick = (o,e) => {
+    e = e || window.event;
+    e.preventDefault();
+
     if(o==="Portraits"){
       setImageList(imageListPortraitSort);
     } else {
@@ -60,7 +63,9 @@ const Masonry2 = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
               return `${(aspectRatio / rowAspectRatioSum) * 100}%`;
             },
           )}>
-            <GatsbyImage image={image} to={image.path} alt={image.caption} onClick={(()=> navigate(image.path))} />
+            <GatsbyImage image={image} alt={image.caption} onClick={(()=> navigate(image.path))} state={{
+    modal: true
+  }}/>
           </Box>
       ))}
       </div>

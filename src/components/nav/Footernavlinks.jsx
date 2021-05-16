@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import {FaHome, FaInfo, FaCameraRetro, FaPhone, FaTheaterMasks} from 'react-icons/fa';
+import {FaHome, FaInfo, FaCameraRetro, FaPhone, FaTheaterMasks, FaRegCalendarAlt} from 'react-icons/fa';
 
 const Footernavlinks = () => {
   return (
@@ -16,6 +16,12 @@ const Footernavlinks = () => {
         <Link to="/bio/" activeClassName="activeNav" className="flex row center">
           <FaInfo size={18} />
           <h3 style={{paddingLeft: '1rem'}}>Bio</h3>
+        </Link>
+      </li>
+      <li>
+        <Link to="/calendar/" activeClassName="activeNav" className="flex row center">
+          <FaRegCalendarAlt size={18} />
+          <h3 style={{paddingLeft: '1rem'}}>Calendar</h3>
         </Link>
       </li>
       <li>

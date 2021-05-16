@@ -8,7 +8,7 @@ const Imageinfo = (props) => {
   const imageSource = getSrc(props.post.img);
   return (
     <>
-    <div className="image flex center basePad" style={{minHeight: windowHeight}}>
+    <div className="image flex center basePad">
       <div className="imgWrap">
         <GatsbyImage image={props.post.img.childImageSharp.gatsbyImageData} alt=""/>
         <div className="buttons flex center row basePad">

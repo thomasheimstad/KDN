@@ -1,10 +1,7 @@
 .contact {
-  overflow: hidden;
+  overflow:hidden;
   background: $footer-background-color;
-  height: 800px;
-  @media screen and (max-width: 768px){
-    height: 600px;
-  }
+  height: 100vh;
   .contactInfo {
     z-index: 1;
     justify-content: flex-end;

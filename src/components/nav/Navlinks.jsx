@@ -1,19 +1,18 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import {FaHome, FaInfo, FaCameraRetro, FaPhone, FaTheaterMasks} from 'react-icons/fa';
+import {FaHome, FaInfo, FaCameraRetro, FaPhone, FaTheaterMasks, FaRegCalendarAlt} from 'react-icons/fa';
 
 const NavLinks = () => {
   return (
     <ul className="flex basePad">
       <li>
-        <Link exact='true' to="/" activeClassName="activeNav">
-          <FaHome size={34} />
-        </Link>
-      </li>
-
-      <li>
         <Link to="/bio/" activeClassName="activeNav">
           <FaInfo size={34} />
+        </Link>
+      </li>
+      <li>
+        <Link to="/calendar/" activeClassName="activeNav">
+          <FaRegCalendarAlt size={34} />
         </Link>
       </li>
       <li>

@@ -1,0 +1,71 @@
+.calendar {
+  .events {
+    .eventsWrapper {
+      .eventsContainer {
+        @media screen and (max-width: 768px){
+          flex-direction: column;
+        }
+        &:nth-child(even){
+          background: $secondary-background-color;
+          p,h2,h3{
+            color: $secondary-font-color;
+          }
+        }
+        padding: 2rem;
+        width: 100%;
+        p,h2,a,h3 {
+          margin: 0;
+          padding: 0;
+        }
+        .timeContainer {
+          align-self: center;
+          padding-right: 3rem;
+          @media screen and (max-width: 768px){
+            align-self: flex-start;
+          }
+        }
+        .descriptionContainer {
+          align-self: center;
+          width: 70ch;
+          @media screen and (max-width: 768px){
+            max-width: 40ch;
+          }
+          a {
+            color: $action-color;
+            &:hover {
+              color: darken($action-color, 25%);
+            }
+          }
+        }
+      }
+    }
+
+    .buttons {
+      .button {
+        margin: 0 1rem;
+        border-radius: 2px;
+        box-shadow: 0;
+        border-bottom: 1px solid transparent;
+        h3 {
+          color: darken($secondary-font-color, 40%);
+          box-shadow: 0;
+        }
+        &:hover h3 {
+          color: $action-color;
+          box-shadow: 0 0 0 0;
+        }
+        &:hover {
+          box-shadow: 0 0 0 0;
+          border-bottom: 1px solid $action-color;
+        }
+      }
+      .eventButton {
+        margin: 0;
+        margin-top: 2rem;
+        text-align: center;
+        display: inline-flex;
+        align-self: center;
+      }
+    }
+  }
+}

@@ -13,7 +13,7 @@ const Home = (props) => {
     }
   }
   return (
-    <div className="frontHero" style={{height: windowHeight, width: '100%'}}>
+    <div className="frontHero" style={{height: '100%', width: '100%'}}>
       <GatsbyImage
         image={props.firstImage}
         alt=""
