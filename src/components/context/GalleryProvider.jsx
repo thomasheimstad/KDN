@@ -1,17 +1,36 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-const GalleryProviderCtx = createContext(null);
+import React, { createContext, useContext, useState, useEffect, useReducer } from 'react';
+
+  const initialState = {
+    imageCategorySelector: "Portraits",
+  }
+
+const actions = {
+  CHANGE_IMGCAT: "CHANGE_IMGCAT",
+}
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case actions.CHANGE_IMGCAT:
+      return { ...state, imageCategorySelector: action.value }
+    default:
+      return state
+  }
+}
+const GalleryProviderCtx = createContext();
+
 const GalleryProvider = ({ children }) => {
-  //copied from Masonry2
-
-  const [imageList, setImageList] = useState();
-
-
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const value = {
+    imageCategorySelector: state.imageCategorySelector,
+    setImageCategorySelector: value => {
+      dispatch({ type: actions.CHANGE_IMGCAT, value })
+    },
+  }
 
   return (
-    <GalleryProviderCtx.Provider value={[imageList, setImageList]}>
+    <GalleryProviderCtx.Provider value={value}>
       {children}
     </GalleryProviderCtx.Provider>
-  );
-};
-export default GalleryProvider;
-export const useGalleryProvider = () => useContext(GalleryProviderCtx);
+  )
+}
+export {GalleryProvider as default, GalleryProviderCtx};

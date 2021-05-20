@@ -1,11 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {GatsbyImage} from 'gatsby-plugin-image';
 import { chunk, sum } from 'lodash';
 import { Box } from 'rebass';
 import { navigate } from "gatsby";
-import {useGalleryProvider} from '../context/GalleryProvider';
+import {Imagelistcontext} from '../context/Imagelistprovider';
 
 const Masonry2 = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
+  const { imageCategorySelector, setImageCategorySelector } = useContext(Imagelistcontext);
   const imageListPortraitSort = () => {
     let portraits = images.filter(x=> x.caption.includes("Portraits"));
     return portraits;
@@ -14,7 +15,7 @@ const Masonry2 = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
     let stills = images.filter(x=> x.caption.includes("KGLTeater"));
     return stills;
   }
-  const [imageList, setImageList] = useState(imageListPortraitSort);
+  const [imageList, setImageList] = imageCategorySelector === "Portraits" ? useState(imageListPortraitSort) : useState(imageListStillsSort);
 
   const aspectRatios = imageList.map(image => {
     let aspectRatio = image.width/image.height;
@@ -34,17 +35,21 @@ const Masonry2 = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
     e = e || window.event;
     e.preventDefault();
 
-    if(o==="Portraits"){
+    if(o === "KGLTeater" && imageCategorySelector !== "KGLTeater"){
+      setImageCategorySelector("KGLTeater");
+      setImageList(imageListStillsSort);
+    } else if(o === "Portraits" && imageCategorySelector !== "Portraits"){
+      setImageCategorySelector("Portraits");
       setImageList(imageListPortraitSort);
     } else {
-      setImageList(imageListStillsSort);
     }
+    console.log(`From handleClick: ${imageCategorySelector}`)
   }
   return (
     <div className="gallery basePad" style={{paddingBottom: '0'}}>
       <div className="flex center basePad buttons">
-        <div className="button" onClick={(()=>handleClick('Portraits'))}><h3>Portraits</h3></div>
-        <div className="button" onClick={(()=>handleClick('KGLTeater'))}><h3>Stills</h3></div>
+        <div className="button" onClick={((e)=>handleClick('Portraits'))}><h3>Portraits</h3></div>
+        <div className="button" onClick={((e)=>handleClick('KGLTeater'))}><h3>Stills</h3></div>
       </div>
       <div className="imageListWrapper flex center wrap">
       {imageList.map((image, i) => (
@@ -63,9 +68,7 @@ const Masonry2 = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
               return `${(aspectRatio / rowAspectRatioSum) * 100}%`;
             },
           )}>
-            <GatsbyImage image={image} alt={image.caption} onClick={(()=> navigate(image.path))} state={{
-    modal: true
-  }}/>
+            <GatsbyImage image={image} alt={image.caption} onClick={(()=> navigate(image.path))} />
           </Box>
       ))}
       </div>

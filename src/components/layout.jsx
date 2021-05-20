@@ -1,7 +1,7 @@
 import React, {Fragment, useState, useEffect} from "react";
 import Helmet from "react-helmet";
 import WindowDimensionsProvider from '../components/context/WindowDimensionsProvider';
-import GalleryProvider from '../components/context/GalleryProvider';
+import {Imagelistcontext} from '../components/context/Imagelistprovider';
 import Siteconfig from "../../data/Siteconfig";
 import { useSpring, animated, config } from 'react-spring';
 import Nav from '../components/nav/Nav';
@@ -27,7 +27,6 @@ const Layout = (props) => {
     return (
       <>
         <WindowDimensionsProvider>
-        <GalleryProvider>
           <Helmet>
             <title>{`${Siteconfig.siteTitle} |  `}</title>
             <meta name="description" content={config.siteDescription} />
@@ -52,7 +51,6 @@ const Layout = (props) => {
             '' :
             <Footer />
           }
-        </GalleryProvider>
         </WindowDimensionsProvider>
       </>
     );

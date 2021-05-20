@@ -5,11 +5,11 @@ const Home = (props) => {
   const { windowHeight, windowWidth } = useWindowDimensions();
   let objectPos = () => {
     if(windowWidth < "768") {
-      return "25% 0%"
+      return "50% 25%"
     } else if(windowWidth < "999"){
-      return "20% 50%"
+      return "50% 50%"
     } else {
-      return "100% 100%"
+      return "50% 70%"
     }
   }
   return (

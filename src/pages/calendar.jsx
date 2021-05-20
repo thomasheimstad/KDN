@@ -23,7 +23,7 @@ const Calendar = (props) => {
           console.log("Errors: ", error);
         }
       });
-  },[])
+  },[calendarItems])
   /* Events savedState stores the returned Ajax call in state. */
   return (
     <Layout location={props.location}>

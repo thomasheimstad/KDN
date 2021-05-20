@@ -26,19 +26,15 @@
   transition: $base-in-timing $base-in-duration*3;
   opacity: 1;
   display: flex;
-  flex: 0;
   max-height: 50rem;
   background: rgba(0,0,0,0);
 }
 .fadeOut {
   transform: translate3d(0,0,0);
-  transition: $base-in-timing $base-in-duration;
+  transition: $base-in-timing $base-in-duration*3;
   opacity: 0;
   visibility: 0;
-  margin:0;
-  padding:0;
   display: flex;
-  flex: 1;
   max-height: 0;
   box-sizing: border-box;
   box-shadow: 0;
