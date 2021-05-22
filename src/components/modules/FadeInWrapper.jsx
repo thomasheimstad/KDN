@@ -19,7 +19,7 @@ const FadeInWrapper = (props) => {
   },[])
   return (
     <div className="fadeInWrap" id={props.id}>
-      <div className={` ${percentage <= 90 ? 'fadeIn' : 'fadeOut'}`}>
+      <div className={`${props.class} ${percentage <= 90 ? 'fadeIn' : 'fadeOut'}`}>
         {props.children}
       </div>
     </div>

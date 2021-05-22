@@ -1,12 +1,16 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import {FaInfo, FaCameraRetro, FaPhone, FaTheaterMasks} from 'react-icons/fa';
+import {FaInfo, FaCameraRetro, FaPhone, FaTheaterMasks, FaRegCalendarAlt} from 'react-icons/fa';
 
 const Welcome = () => {
   let data = [
       {
         name: 'Bio',
         link: '/bio/'
+      },
+      {
+        name: 'Calendar',
+        link: '/calendar/'
       },
       {
         name: 'Roles',
@@ -24,6 +28,9 @@ const Welcome = () => {
   let buttonChooser = (x) => {
     if(x==="Bio"){
       return (<FaInfo size={24} />)
+    }
+    else if(x==="Calendar"){
+      return (<FaRegCalendarAlt size={24} />)
     }
     else if(x==="Roles"){
       return (<FaTheaterMasks size={24} />)
@@ -51,6 +58,9 @@ const Welcome = () => {
          </Link>
          <Link to={data[3].link}>
            <button className="button">{buttonChooser(data[3].name)}</button>
+         </Link>
+         <Link to={data[4].link}>
+           <button className="button">{buttonChooser(data[4].name)}</button>
          </Link>
        </div>
     </div>

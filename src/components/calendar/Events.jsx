@@ -60,8 +60,7 @@ const Events = (props) => {
 
       if(item.start.dateTime.slice(0,15) > new Date().toJSON().slice(0,15) && pastEvents === false ) {
           return (
-            <div className="eventsContainer flex row" key={index}>
-              <FadeInWrapper id={id} showAll={showAll} >
+            <FadeInWrapper key={index} id={id} showAll={showAll} class="eventsContainer flex row">
                 <div className="timeContainer flex column">
                   <h3 className="date">{number[8]}{number[9]}.{number[5]}{number[6]}.{number[2]}{number[3]}</h3>
                   <h3 className="time">{number[11]}{number[12]}{number[13]}{number[14]}{number[15]}</h3>
@@ -74,13 +73,11 @@ const Events = (props) => {
                   }
                 </div>
                 </FadeInWrapper>
-            </div>
             )
           } else if(item.start.dateTime.slice(0,15) < new Date().toJSON().slice(0,15) && pastEvents === true  && year === pastYear ) {
 
               return (
-                <div className="eventsContainer flex row" key={index}>
-                  <FadeInWrapper id={id} showAll={showAll}>
+                <FadeInWrapper key={index} id={id} showAll={showAll} class="eventsContainer flex row">
                     <div className="timeContainer flex column">
                       <h3 className="date">{number[8]}{number[9]}.{number[5]}{number[6]}.{number[2]}{number[3]}</h3>
                       <h3 className="time">{number[11]}{number[12]}{number[13]}{number[14]}{number[15]}</h3>
@@ -92,8 +89,7 @@ const Events = (props) => {
                           location ? <a href={location} className="location" target="_blank">Tickets/Info</a> : ''
                       }
                     </div>
-                  </FadeInWrapper>
-                </div>
+                    </FadeInWrapper>
                 )
               }
         }

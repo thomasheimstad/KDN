@@ -1,21 +1,26 @@
 .calendar {
   .events {
     .eventsWrapper {
-      .eventsContainer {
-        @media screen and (max-width: 768px){
-          flex-direction: column;
-        }
+      .fadeInWrap {
         &:nth-child(even){
           background: $secondary-background-color;
           p,h2,h3{
             color: $secondary-font-color;
           }
         }
+      }
+      .eventsContainer {
+        @media screen and (max-width: 768px){
+          flex-direction: column;
+        }
         padding: 2rem;
         width: 100%;
         p,h2,a,h3 {
           margin: 0;
           padding: 0;
+        }
+        p {
+          max-width: 70ch;
         }
         .timeContainer {
           align-self: center;
@@ -26,9 +31,9 @@
         }
         .descriptionContainer {
           align-self: center;
-          width: 70ch;
+          width: 100%;
           @media screen and (max-width: 768px){
-            max-width: 40ch;
+            width: 100%;
           }
           a {
             color: $action-color;
