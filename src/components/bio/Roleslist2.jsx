@@ -36,7 +36,7 @@ const roles = [
     [
       {
         title: "Faust",
-        role: "Sibel"
+        role: "Siebel"
       }
     ]
   },
@@ -75,7 +75,7 @@ const roles = [
       },
       {
         title: "Rigoletto",
-        role: "Paggio, Maddalena, Nurse no. 2"
+        role: "Maddalena"
       },
     ]
   },

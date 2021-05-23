@@ -16,11 +16,21 @@
     margin: 0;
     @media screen and (max-width: 768px) {
       font-size: 100%;
-      opacity: 0.8;
+      opacity: 0;
     }
   }
   p {
     opacity: 0;
+  }
+  .buttons {
+    flex: 1;
+    flex-flow: column;
+    margin-left: 99%;
+    @media screen and (max-width: 968px){
+      margin-left: 0;
+      align-self: center;
+      flex-flow: row;
+    }
   }
   .trails-text-old {
     display: flex;

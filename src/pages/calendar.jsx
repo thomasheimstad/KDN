@@ -18,7 +18,6 @@ const Calendar = (props) => {
       .end((error, response) => {
         if(!error && response ) {
           setCalendarItems(response.body);
-          console.log(response.body);
         } else {
           console.log("Errors: ", error);
         }

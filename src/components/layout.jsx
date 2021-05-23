@@ -32,7 +32,7 @@ const Layout = (props) => {
             <meta name="description" content={config.siteDescription} />
             <link rel='shortcut icon' type='image/png' href={`${favicon}`} />
           </Helmet>
-          {myLocation === "/" ? '' : <Nav/>}
+          {props.location.pathname === "/" ? '' : <Nav/>}
           {/*<Transition>{children}</Transition>*/}
           {/*<Transition keys={location.pathname}
             from={{ opacity: 0, transform: 'translate3d(100%,0,0)' }}
@@ -46,11 +46,7 @@ const Layout = (props) => {
           <AniWrapper>
             {children}
           </AniWrapper>
-          { myLocation === "/" ||
-            myLocation === "/contacts"  ?
-            '' :
-            <Footer />
-          }
+          { props.location.pathname === "/" ? '' : <Footer /> }
         </WindowDimensionsProvider>
       </>
     );

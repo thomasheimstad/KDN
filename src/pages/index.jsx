@@ -23,9 +23,9 @@ const Index = (props) => {
 export default Index;
 export const query = graphql`
   query kariHomeImageQuery {
-    file(relativePath: { eq: "karicarmenpromo1.jpg" }) {
+    file(relativePath: { eq: "carmen4d.jpg" }) {
       childImageSharp {
-        gatsbyImageData(layout: CONSTRAINED, quality: 80)
+        gatsbyImageData(layout: CONSTRAINED, quality: 90)
       }
     }
   }

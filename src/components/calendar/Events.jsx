@@ -9,12 +9,12 @@ const Events = (props) => {
 
   /* The following function returns the first 3 upcoming events from your Google Calendar, and filters out the finished events.
      The switch deals with two cases, where the second one, true, returns ALL the next calendar events.*/
-  let reduceTo5events = (e) => {
+  let reduceTo10events = (e) => {
     let temp = [];
     for(let i of e.events)
     i && temp.push(i);
     switch(showAll) {
-      case false: return [temp[0], temp[1], temp[2], temp[3], temp[4]];
+      case false: return [temp[0], temp[1], temp[2], temp[3], temp[4], temp[5], temp[6], temp[7], temp[8], temp[9]];
       case true: return [...temp];
     }
   }
@@ -30,7 +30,6 @@ const Events = (props) => {
     if(o==="Upcoming"){
       setPastEvents(false)
     } else {
-      console.log(pastYear)
       setPastEvents(true);
     }
   }
@@ -113,14 +112,19 @@ const Events = (props) => {
           <div className="flex center buttons">
           { pastEvents ?
             allYears.map(x=>{
-              return (<div className="button" onClick={(()=>setPastYear(x))}><h3>{`${x}`}</h3></div>)
+              // filter out future years
+              if(x <= new Date().getFullYear()){
+                  return (<div key={x} className="button" onClick={(()=>setPastYear(x))}><h3>{`${x}`}</h3></div>)
+              } else {
+                ''
+              }
             })
           : ''
           }
           </div>
         </FadeInWrapper>
-        <div className="eventsWrapper basePad">
-          {reduceTo5events({events})}
+        <div className="eventsWrapper">
+          {reduceTo10events({events})}
         </div>
         <div className="buttons flex center">
           <div className="button eventButton" onClick={handleClick}><h3>{buttonText}</h3></div>

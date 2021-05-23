@@ -1,5 +1,16 @@
 .calendar {
+  width: 100%;
+  @media screen and (max-width: 768px){
+    padding-left: 0;
+    padding-right: 0;
+  }
   .events {
+    width: 100%;
+    max-width: 100ch;
+    @media screen and (max-width: 768px){
+      padding-left: 0;
+      padding-right: 0;
+    }
     .eventsWrapper {
       .fadeInWrap {
         &:nth-child(even){
@@ -20,7 +31,9 @@
           padding: 0;
         }
         p {
-          max-width: 70ch;
+          @media screen and (max-width: 768px) {
+            font-size: 0.9rem;
+          }
         }
         .timeContainer {
           align-self: center;
@@ -32,9 +45,6 @@
         .descriptionContainer {
           align-self: center;
           width: 100%;
-          @media screen and (max-width: 768px){
-            width: 100%;
-          }
           a {
             color: $action-color;
             &:hover {

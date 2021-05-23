@@ -23,7 +23,7 @@
 }
 .fadeIn{
   transform: translate3d(0,0,0);
-  transition: $base-in-timing $base-in-duration*3;
+  transition: $base-in-timing $base-in-duration*2;
   opacity: 1;
   display: flex;
   max-height: 50rem;
@@ -31,7 +31,7 @@
 }
 .fadeOut {
   transform: translate3d(0,0,0);
-  transition: $base-in-timing $base-in-duration*3;
+  transition: $base-in-timing $base-in-duration*2;
   opacity: 0;
   visibility: 0;
   display: flex;

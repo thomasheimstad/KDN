@@ -27,6 +27,8 @@
       padding: 0;
       padding-bottom: 0.5rem;
       font-size: 1rem;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
     }
     h1, h2, h4 {
       line-height: 1;
@@ -53,12 +55,13 @@
       cursor: pointer;
       background: rgba($base-background-color,0.5);
       border-radius: 5px;
+      &:hover p {
+        color: darken($action-color, 25%);
+      }
       p {
-        padding: 0.5rem 1rem;
+        padding: 0.2rem 1rem;
+        margin: 0;
         transition: $base-in-timing $base-in-duration;
-        &:hover {
-          color: darken($action-color, 25%);
-        }
       }
     }
     @media screen and (max-width: 768px) {
