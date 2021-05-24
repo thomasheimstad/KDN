@@ -49,11 +49,13 @@ const Events = (props) => {
       let number = [...start];
       let year = new Date(item.start.dateTime).getFullYear();
 
-      if(allYears === null && allYears.length <= 0){
-        setAllYears([year])
-      } else if(allYears.includes(year) === true) {
-      } else {
-        setAllYears([year, ...allYears])
+      if(start.slice(0,15) < new Date().toJSON().slice(0,15) ) {
+        if(allYears === null && allYears.length <= 0){
+          setAllYears([year])
+        } else if(allYears.includes(year) === true) {
+        } else {
+          setAllYears([year, ...allYears])
+        }
       }
       /* If the events' start time is later than today, it will return the events */
 
@@ -73,8 +75,7 @@ const Events = (props) => {
                 </div>
                 </FadeInWrapper>
             )
-          } else if(item.start.dateTime.slice(0,15) < new Date().toJSON().slice(0,15) && pastEvents === true  && year === pastYear ) {
-
+          } else if(item.start.dateTime.slice(0,15) < new Date().toJSON().slice(0,15) && pastEvents === true  && year === pastYear) {
               return (
                 <FadeInWrapper key={index} id={id} showAll={showAll} class="eventsContainer flex row">
                     <div className="timeContainer flex column">
@@ -104,12 +105,12 @@ const Events = (props) => {
 
     return (
       <div className="events">
-        <div className="flex center basePad buttons" style={{paddingBottom: 0}}>
+        <div className="flex center basePad buttons" style={{paddingBottom: '2rem'}}>
           <div className="button" onClick={(()=>setPastEvents(false))}><h3>Upcoming</h3></div>
           <div className="button" onClick={(()=>setPastEvents(true))}><h3>Past</h3></div>
         </div>
         <FadeInWrapper id="chooseYearButtons">
-          <div className="flex center buttons">
+          <div className="flex center buttons wrap" style={{paddingTop: 0}}>
           { pastEvents ?
             allYears.map(x=>{
               // filter out future years

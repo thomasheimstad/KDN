@@ -15,13 +15,21 @@
   }
   h4 {
     margin: 0;
-    padding: 1.5rem;
   }
   a:hover svg {
     color: darken($action-color,25%);
   }
+  p, h2 {
+    color: $action-color;
+    text-align: left;
+  }
   .buttons {
+    h2,h3,h4,p {
+      line-height: 1;
+      margin: 0;
+    }
     .button {
+      margin-left: 1rem;
       padding: 1rem;
       border-radius: 50%;
     }

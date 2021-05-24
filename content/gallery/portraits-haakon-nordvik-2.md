@@ -4,5 +4,7 @@ title: "Portraits-Haakon-Nordvik-2"
 photo: "Haakon Nordvik"
 img: '../img/kari-photo-haakon-nordvik-2.jpg'
 date: "2018-08-01"
-
+opera: 'Photo session'
+role: 'Haakon Nordvik'
+house: 'Haugesund'
 ---

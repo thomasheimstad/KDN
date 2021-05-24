@@ -8,7 +8,7 @@ import config from "../../data/Siteconfig";
 const _ = require("lodash");
 
 const Imagetemplate = (props) => {
-  const { slug } = props.pageContext;
+  const {nexttitle,nextslug,prevtitle,prevslug,slug} = props.pageContext;
   const postNode = props.data.markdownRemark;
   const post = postNode.frontmatter;
   if (!post.id) {
@@ -39,8 +39,12 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
+        date
         photo
         category
+        opera
+        role
+        house
         img {
           childImageSharp {
             gatsbyImageData(layout: CONSTRAINED, quality: 80)
