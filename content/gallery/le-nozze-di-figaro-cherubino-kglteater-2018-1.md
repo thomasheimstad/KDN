@@ -7,4 +7,6 @@ date: "2018-09-01"
 opera: 'Le nozze di Figaro'
 role: 'Cherubino'
 house: 'Royal Danish Opera'
+tags:
+    - "still"
 ---

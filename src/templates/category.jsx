@@ -44,6 +44,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             category
+            tags
             date
             photo
             img {

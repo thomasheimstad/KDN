@@ -36,7 +36,7 @@ const roles = [
     [
       {
         title: "Faust",
-        role: "Siebel"
+        role: "Siébel"
       }
     ]
   },

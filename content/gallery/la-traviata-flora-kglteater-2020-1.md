@@ -7,4 +7,6 @@ date: "2020-01-01"
 opera: 'La Traviata'
 role: 'Flora'
 house: 'Royal Danish Opera'
+tags:
+    - "still"
 ---

@@ -110,6 +110,7 @@ exports.createPages = ({ graphql, actions }) => {
                 node {
                   frontmatter {
                     category
+                    tags
                   }
                   fields {
                     slug
@@ -128,17 +129,34 @@ exports.createPages = ({ graphql, actions }) => {
 
         const tagSet = new Set();
         const categorySet = new Set();
-        result.data.allMarkdownRemark.edges.forEach(edge => {
+        result.data.allMarkdownRemark.edges.forEach((edge, index) => {
           if (edge.node.frontmatter.category) {
             categorySet.add(edge.node.frontmatter.category);
           }
+          if (edge.node.frontmatter.tags) {
+            edge.node.frontmatter.tags.forEach((tag) => {
+              tagSet.add(tag);
+            });
+          }
+          const nextID = index + 1 < result.data.allMarkdownRemark.edges.length ? index + 1 : 0;
+          const prevID = index - 1 >= 0 ? index - 1 : result.data.allMarkdownRemark.edges.length - 1;
+          const nextEdge = result.data.allMarkdownRemark.edges[nextID];
+          const prevEdge = result.data.allMarkdownRemark.edges[prevID];
+          const currIndex = index;
 
           if(edge.node.frontmatter.category==="gallery") {
             createPage({
               path: edge.node.fields.slug,
               component: imagePage,
               context: {
-                slug: edge.node.fields.slug
+                slug: edge.node.fields.slug,
+                nexttitle: nextEdge.node.frontmatter.title,
+                nextslug: nextEdge.node.fields.slug,
+                nexttags: nextEdge.node.frontmatter.tags,
+                prevtitle: prevEdge.node.frontmatter.title,
+                prevslug: prevEdge.node.fields.slug,
+                prevtags: prevEdge.node.frontmatter.tags,
+                currIndex: currIndex
               }
             });
           }

@@ -15,6 +15,7 @@ const Postlisting = (props) => {
         excerpt: postEdge.node.excerpt,
         timeToRead: postEdge.node.timeToRead,
         category: postEdge.node.frontmatter.category,
+        tags: postEdge.node.frontmatter.tags,
         quote: postEdge.node.frontmatter.quote,
         author: postEdge.node.frontmatter.author,
         time: postEdge.node.frontmatter.time,
@@ -35,6 +36,7 @@ const Postlisting = (props) => {
         caption: `${x.title} – ${x.photo}`,
         path: x.path,
         date: x.date,
+        tags: x.tags
       }))}
         /> )
     } else {

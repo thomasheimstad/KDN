@@ -2,7 +2,8 @@ import React, {useState, useEffect, useContext} from 'react';
 import {GatsbyImage} from 'gatsby-plugin-image';
 import { chunk, sum } from 'lodash';
 import { Box } from 'rebass';
-import { navigate } from "gatsby";
+import { navigate} from "gatsby";
+import { Link } from 'gatsby-plugin-modal-routing-3';
 import {Imagelistcontext} from '../context/Imagelistprovider';
 
 const Masonry2 = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
@@ -43,13 +44,12 @@ const Masonry2 = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
       setImageList(imageListPortraitSort);
     } else {
     }
-    console.log(`From handleClick: ${imageCategorySelector}`)
   }
   return (
     <div className="gallery basePad" style={{paddingBottom: '0'}}>
       <div className="flex center basePad buttons">
-        <div className="button" onClick={((e)=>handleClick('Portraits'))}><h3>Portraits</h3></div>
-        <div className="button" onClick={((e)=>handleClick('KGLTeater'))}><h3>Stills</h3></div>
+        <div className={`button ${imageCategorySelector === "Portraits" ? "active" : ""}`} onClick={((e)=>handleClick('Portraits'))}><h3>Portraits</h3></div>
+        <div className={`button ${imageCategorySelector === "KGLTeater" ? "active" : ""}`} onClick={((e)=>handleClick('KGLTeater'))}><h3>Stills</h3></div>
       </div>
       <div className="imageListWrapper flex center wrap">
       {imageList.map((image, i) => (
@@ -68,7 +68,7 @@ const Masonry2 = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
               return `${(aspectRatio / rowAspectRatioSum) * 100}%`;
             },
           )}>
-            <GatsbyImage image={image} alt={image.caption} onClick={(()=> navigate(image.path))} />
+            <GatsbyImage onClick={(()=> navigate(`${image.path}`, { state: { modal: true }}))} image={image} alt={image.caption} />
           </Box>
       ))}
       </div>

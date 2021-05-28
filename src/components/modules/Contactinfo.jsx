@@ -8,12 +8,12 @@ let data = [
       link: 'mailto:kari.dahl.nielsen@gmail.com'
     },
     {
-      name: 'facebook.com/karidahlnielsen',
-      link: 'https://www.facebook.com/karidahlnielsen'
+      name: 'facebook.com/kari.d.nielsen',
+      link: 'https://www.facebook.com/kari.d.nielsen'
     },
     {
       name: 'instagram.com/karidahlnielsen',
-      link: 'https://www.instagram.com/karidahlnielsen'
+      link: 'https://www.instagram.com/kari.dahl.nielsen'
     }
 ]
 const Contactinfo = () => {
@@ -21,7 +21,7 @@ const Contactinfo = () => {
     if(x==="kari.dahl.nielsen@gmail.com"){
       return (<IoMdMail size={24} />)
     }
-    else if(x==="facebook.com/karidahlnielsen"){
+    else if(x==="facebook.com/kari.d.nielsen"){
       return (<FaFacebook size={24} />)
     }
     else {

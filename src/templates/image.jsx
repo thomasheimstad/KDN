@@ -5,27 +5,36 @@ import Layout from "../components/layout";
 import Imageinfo from "../components/modules/Imageinfo";
 import Seo from "../components/modules/Seo";
 import config from "../../data/Siteconfig";
+import {ModalRoutingContext} from 'gatsby-plugin-modal-routing-3';
+import ConditionalLayout from '../components/conditionallayout';
 const _ = require("lodash");
 
 const Imagetemplate = (props) => {
-  const {nexttitle,nextslug,prevtitle,prevslug,slug} = props.pageContext;
+  const {slug} = props.pageContext;
   const postNode = props.data.markdownRemark;
   const post = postNode.frontmatter;
   if (!post.id) {
     post.id = slug;
+    console.log(props);
   }
   if (!post.category_id) {
     post.category_id = config.postDefaultCategoryID;
   }
+
   return (
-    <Layout location={props.location}>
-      <Seo postPath={slug} postNode={postNode} postSEO />
-      <Helmet>
-        <title>{`${_.upperFirst(post.title)} | ${config.siteTitle}`}</title>
-      </Helmet>
-      <Imageinfo post={post} />
-    </Layout>
-  );
+    <ModalRoutingContext.Consumer>
+      {({ modal, closeTo }) => (
+        <ConditionalLayout location={props.location}>
+            <Seo postPath={slug} postNode={postNode} postSEO />
+            <Helmet>
+              <title>{`${_.upperFirst(post.title)} | ${config.siteTitle}`}</title>
+            </Helmet>
+            <Imageinfo post={post} location={props.location} pageContext={props.pageContext}/>
+          </ConditionalLayout>
+        )
+      }
+    </ModalRoutingContext.Consumer>
+  )
 }
 export default Imagetemplate;
 
@@ -42,12 +51,13 @@ export const pageQuery = graphql`
         date
         photo
         category
+        tags
         opera
         role
         house
         img {
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, quality: 80)
+            gatsbyImageData(layout: CONSTRAINED, quality: 70)
 
           }
         }

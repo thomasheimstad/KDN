@@ -1,19 +1,18 @@
 import React from 'react';
-import {Link} from 'gatsby';
 import {FaFacebook, FaInstagram} from 'react-icons/fa';
 
 const Sociallinks = () => {
   return(
     <ul className="buttons flex row center">
     <li>
-      <Link exact='true' to="/" >
+      <a href="https://www.facebook.com/kari.d.nielsen" target="_blank" rel="noreferrer">
         <button><FaFacebook size={16} /></button>
-      </Link>
+      </a>
     </li>
     <li>
-      <Link exact='true' to="/" >
+      <a href="https://www.instagram.com/kari.dahl.nielsen" target="_blank" rel="noreferrer">
         <button><FaInstagram size={16} /></button>
-      </Link>
+      </a>
     </li>
     </ul>
   )

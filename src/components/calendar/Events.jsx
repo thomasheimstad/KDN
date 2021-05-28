@@ -67,7 +67,7 @@ const Events = (props) => {
                   <h3 className="time">{number[11]}{number[12]}{number[13]}{number[14]}{number[15]}</h3>
                 </div>
                 <div className="descriptionContainer">
-                  <h2 className="summary">{summary}</h2>
+                  <h2 className={`summary ${summary.includes("cancelled") ? ' cancelled' : ''}`}>{summary}</h2>
                   <p className="description">{description}</p>
                   {
                       location ? <a href={location} className="location" target="_blank">Tickets/Info</a> : ''
@@ -83,7 +83,7 @@ const Events = (props) => {
                       <h3 className="time">{number[11]}{number[12]}{number[13]}{number[14]}{number[15]}</h3>
                     </div>
                     <div className="descriptionContainer">
-                      <h2 className="summary">{summary}</h2>
+                      <h2 className={`summary ${summary.includes("cancelled") ? ' cancelled' : ''}`}>{summary}</h2>
                       <p className="description">{description}</p>
                       {
                           location ? <a href={location} className="location" target="_blank">Tickets/Info</a> : ''

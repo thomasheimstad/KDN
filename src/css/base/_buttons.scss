@@ -1,6 +1,5 @@
 .buttons {
   margin: 0;
-  flex: 1;
   flex-flow: row;
   a {
     border-radius: 50%;
@@ -52,6 +51,24 @@
     text-align: center;
     @media screen and (max-width: 768px) {
       letter-spacing: 1px;
+    }
+  }
+}
+.closeButton {
+  padding: 0.5rem;
+  border: 1px solid darken($secondary-font-color, 50%);
+  border-radius: 50%;
+  position: fixed;
+  top: 3%;
+  left: 3%;
+  z-index: 2;
+  svg {
+    transition: $base-in-duration $base-in-timing;
+    color: $secondary-font-color;
+  }
+  &:hover {
+    svg {
+      color:  darken($secondary-font-color, 10%);
     }
   }
 }

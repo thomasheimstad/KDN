@@ -63,6 +63,17 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-modal-routing-3`,
+      options: {
+        appElement: '#___gatsby',
+        modalProps: {
+          className: 'react-modal',
+          overlayClassName: 'react-modal-overlay',
+          closeTimeoutMS: 400,
+        },
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
     //   options: {

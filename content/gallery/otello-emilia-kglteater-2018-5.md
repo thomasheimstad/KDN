@@ -7,4 +7,7 @@ date: "2018-04-01"
 opera: 'Otello'
 role: 'Emilia'
 house: 'Royal Danish Opera'
+tags:
+    - "still"
+    - "last"
 ---

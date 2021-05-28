@@ -77,5 +77,11 @@
         border-bottom: 1px solid $action-color;
       }
     }
+    .active {
+      h3 {
+        color: $action-color;
+      }
+      border-bottom: 1px solid $action-color;
+    }
   }
 }

@@ -56,6 +56,10 @@
               color: darken($action-color, 25%);
             }
           }
+          .cancelled {
+            text-decoration: line-through;
+            color: darken($secondary-font-color, 25%);
+          }
         }
       }
     }

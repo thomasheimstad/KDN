@@ -7,4 +7,6 @@ date: "2019-11-01"
 opera: 'Così fan Tutte'
 role: 'Dorabella'
 house: 'Royal Danish Opera'
+tags:
+    - "still"
 ---

@@ -1,37 +1,58 @@
 .image {
+  min-height: 100vh;
   width: 100%;
   padding-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
   .imgWrap {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    overflow: hidden;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
   }
-  h4,svg,a {
+  h2,svg,a {
     color: $action-color;
-    font-size: 120%;
     transition: $base-in-timing $base-in-duration;
-    display: inline-block;
-    border-radius: 50%;
   }
-  h4 {
+  h2 {
     margin: 0;
+    @media screen and (max-width: 768px){
+      padding-top: 1rem;
+      font-size: 100%;
+    }
   }
-  a:hover svg {
-    color: darken($action-color,25%);
+  p {
+    @media screen and (max-width: 768px){
+      font-size: 70%;
+    }
   }
   p, h2 {
     color: $action-color;
     text-align: left;
   }
   .buttons {
+    padding: 3rem 2rem;
+    background: $footer-background-color;
+    margin-top: -4px;
     h2,h3,h4,p {
       line-height: 1;
       margin: 0;
+      padding: 0;
+    }
+    a {
+      margin: 0;
     }
     .button {
-      margin-left: 1rem;
-      padding: 1rem;
+      padding: 0.5rem;
       border-radius: 50%;
+      &:hover {
+        background: darken($footer-background-color,5%);
+        svg {
+          color: darken($action-color,25%);
+        }
+      }
     }
   }
 }

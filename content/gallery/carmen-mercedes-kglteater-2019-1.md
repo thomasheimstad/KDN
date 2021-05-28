@@ -7,4 +7,6 @@ date: "2019-09-01"
 opera: 'Carmen'
 role: 'Mercédès'
 house: 'Royal Danish Opera'
+tags:
+    - "still"
 ---
