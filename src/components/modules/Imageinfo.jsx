@@ -4,6 +4,7 @@ import {MdFileDownload} from "react-icons/md";
 import {navigate} from 'gatsby';
 import findIndex from "lodash/findIndex";
 import {usePostListingQuery} from '../hooks/usePostListingQuery';
+import {useSwipeable, config} from 'react-swipeable';
 import {Imagelistcontext} from '../context/Imagelistprovider';
 import {IoCaretForward, IoCaretBack} from "react-icons/io5";
 
@@ -59,53 +60,36 @@ const Imageinfo = (props) => {
   findPosts();
   findCurrentIndex();
 
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
-
-  function handleTouchStart(e) {
-      setTouchStart(e.targetTouches[0].clientX);
-  }
-
-  function handleTouchMove(e) {
-      setTouchEnd(e.targetTouches[0].clientX);
-  }
-
-  function handleTouchEnd() {
-      if (touchStart - touchEnd > 50) {
-          // do your stuff here for left swipe
-          next(e)
-      }
-
-      if (touchStart - touchEnd < -50) {
-          // do your stuff here for right swipe
-          prev(e);
-      }
-  }
+  const handlers = useSwipeable({
+    onSwipedRight: (eventData) => prev(),
+    onSwipedLeft: (eventData) => next(),
+  ...config,
+  });
     return (
       <>
       <div className="image flex center">
-        <div className="imgWrap flex center">
+        <div className="imgWrap flex center column" {...handlers}>
           <GatsbyImage image={props.post.img.childImageSharp.gatsbyImageData} alt=""/>
           <div className="buttons flex center spaceBetween row">
-            <div className="button" onClick={((e)=> prev(e))}><IoCaretBack className="iconz" size={28} /></div>
-            <div className="flex center row">
-              <div className="flex column flexStart">
-                {props.post.opera ? <div className="flex row center" style={{justifyContent: 'flex-start', alignItems: 'baseline'}}>
-                  <h2>{props.post.opera}</h2>
-                  <h2 style={{fontSize:"80%"}}>&nbsp;({props.post.role})</h2>
-                </div> : null}
-                {props.post.house ? <p>{props.post.house} {imageYear}</p> : null}
+            <IoCaretBack className="button" size={48} onClick={((e)=> prev(e))} />
+            <div className="imgTextWrap flex column flexStart">
+              {props.post.opera ? <div className="flex column">
+                <h2>{props.post.opera}</h2>
+                <h3>{props.post.role}</h3>
+              </div> : null}
+              {props.post.house ? <p style={{marginTop: '15px'}}>{props.post.house} {imageYear}</p> : null}
+              <div className="flex row center">
                 <p>Photo: {props.post.photo}</p>
+                <a
+                  id="downloadImageButton"
+                  href={imageSource}
+                  download={`${props.post.title}-photo-${props.post.photo}.jpg`}
+                  >
+                  <MdFileDownload className="button" size={38} />
+                </a>
               </div>
-              <a
-                id="downloadImageButton"
-                href={imageSource}
-                download={`${props.post.title}-photo-${props.post.photo}.jpg`}
-                >
-                <div className="button" style={{marginLeft: '5px'}}><MdFileDownload className="iconz" size={20} /></div>
-              </a>
             </div>
-            <div className="button" onClick={((e)=> next(e))}><IoCaretForward className="iconz" size={28} /></div>
+            <IoCaretForward size={48} className="button" onClick={((e)=> next(e))} />
           </div>
         </div>
       </div>

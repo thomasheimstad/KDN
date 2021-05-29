@@ -8,7 +8,7 @@ const ConditionalLayout = ({ children, ...rest }) => (
     {({ modal, closeTo }) => (
       modal ? (
         <React.Fragment>
-          <Link to={closeTo}>
+          <Link to={closeTo} state={{noScroll: true}}>
           <div className="buttons">
             <div className="button closeButton">
               <IoMdClose size={24} />

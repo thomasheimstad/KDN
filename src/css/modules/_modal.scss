@@ -24,6 +24,10 @@
   #___gatsby {
     filter: blur(15px);
   }
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 
 .ReactModal__Overlay {

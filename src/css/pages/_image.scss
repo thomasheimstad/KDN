@@ -1,11 +1,13 @@
 .image {
-  min-height: 100vh;
+  overflow: auto;
   width: 100%;
+  min-height: 100%;
+  min-height: -webkit-fill-available;
+  min-height: -moz-available;
   padding-bottom: 0;
   margin-left: auto;
   margin-right: auto;
   .imgWrap {
-    display: block;
     width: 60%;
     overflow: hidden;
     @media screen and (max-width: 768px) {
@@ -28,14 +30,21 @@
       font-size: 70%;
     }
   }
-  p, h2 {
+  p, h2, h3 {
     color: $action-color;
     text-align: left;
   }
+  h3 {
+    font-size: 100%;
+    @media screen and (max-width: 768px){
+      font-size: 80%;
+    }
+  }
   .buttons {
-    padding: 3rem 2rem;
+    padding: 3rem 1rem;
     background: $footer-background-color;
     margin-top: -4px;
+    width: 100%;
     h2,h3,h4,p {
       line-height: 1;
       margin: 0;
@@ -53,6 +62,9 @@
           color: darken($action-color,25%);
         }
       }
+    }
+    .imgTextWrap {
+      align-self: center;
     }
   }
 }

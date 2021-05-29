@@ -55,8 +55,8 @@
   }
 }
 .closeButton {
-  padding: 0.5rem;
-  border: 1px solid darken($secondary-font-color, 50%);
+  padding: 0.2rem;
+  border: 1px solid darken($action-color, 10%);
   border-radius: 50%;
   position: fixed;
   top: 3%;
@@ -64,11 +64,11 @@
   z-index: 2;
   svg {
     transition: $base-in-duration $base-in-timing;
-    color: $secondary-font-color;
+    color: $action-color;
   }
   &:hover {
     svg {
-      color:  darken($secondary-font-color, 10%);
+      color:  darken($action-color, 10%);
     }
   }
 }

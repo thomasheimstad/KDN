@@ -15,7 +15,6 @@ const Imagetemplate = (props) => {
   const post = postNode.frontmatter;
   if (!post.id) {
     post.id = slug;
-    console.log(props);
   }
   if (!post.category_id) {
     post.category_id = config.postDefaultCategoryID;
