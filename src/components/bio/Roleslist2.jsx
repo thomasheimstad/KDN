@@ -83,7 +83,7 @@ const roles = [
     composer: "Mozart",
     operas: [
       {
-        title: "Cosí fan Tutte",
+        title: "Così fan Tutte",
         role: "Dorabella"
       },
       {

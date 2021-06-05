@@ -7,6 +7,7 @@ date: "2018-04-03"
 opera: 'Otello'
 role: 'Emilia'
 house: 'Royal Danish Opera'
+download: 'https://drive.google.com/uc?id=1sOhBtDXoRKw9qhNJJ92OGqvG5ZTH0c2D&export=download'
 tags:
     - "still"
 ---

@@ -10,6 +10,7 @@ import {IoCaretForward, IoCaretBack} from "react-icons/io5";
 
 const Imageinfo = (props) => {
   const imageSource = getSrc(props.post.img);
+  const gDriveDownload = props.post.download;
   const { imageCategorySelector} = useContext(Imagelistcontext);
   let imageYear = new Date(props.post.date).getFullYear();
   let data = usePostListingQuery();
@@ -82,7 +83,7 @@ const Imageinfo = (props) => {
                 <p>Photo: {props.post.photo}</p>
                 <a
                   id="downloadImageButton"
-                  href={imageSource}
+                  href={gDriveDownload}
                   download={`${props.post.title}-photo-${props.post.photo}.jpg`}
                   >
                   <MdFileDownload className="button" size={38} />

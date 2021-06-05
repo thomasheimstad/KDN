@@ -7,6 +7,7 @@ date: "2019-11-01"
 opera: 'Così fan Tutte'
 role: 'Dorabella'
 house: 'Royal Danish Opera'
+download: 'https://drive.google.com/uc?id=1rgrHskJ72hbUrAWB7hs_pssYZ6eTGY1b&export=download'
 tags:
     - "still"
 ---

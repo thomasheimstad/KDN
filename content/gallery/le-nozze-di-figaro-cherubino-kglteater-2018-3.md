@@ -7,6 +7,7 @@ date: "2018-09-03"
 opera: 'Le nozze di Figaro'
 role: 'Cherubino'
 house: 'Royal Danish Opera'
+download: 'https://drive.google.com/uc?id=1QQcuNVw1grn_KKK-zO6uwCfY2f7Pw2wi&export=download'
 tags:
     - "still"
 ---

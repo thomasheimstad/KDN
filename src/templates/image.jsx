@@ -54,6 +54,7 @@ export const pageQuery = graphql`
         opera
         role
         house
+        download
         img {
           childImageSharp {
             gatsbyImageData(layout: CONSTRAINED, quality: 70)
