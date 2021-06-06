@@ -4,7 +4,7 @@ import FadeInWrapper from '../modules/FadeInWrapper';
 const Events = (props) => {
     const [showAll, setShowAll] = useState(false);
     const [pastEvents, setPastEvents] = useState(false);
-    const [pastYear, setPastYear] = useState(new Date().getFullYear()-1);
+    const [pastYear, setPastYear] = useState(new Date().getFullYear());
     const [allYears, setAllYears] = useState([]);
 
   /* The following function returns the first 3 upcoming events from your Google Calendar, and filters out the finished events.
@@ -35,6 +35,7 @@ const Events = (props) => {
   }
   let buttonText = showAll ? "Show fewer events" : "Show all events";
   let buttonPastText = pastEvents ? "Upcoming" : "Past events";
+
     /* The following .map method returns some of the object parameters from the Google Calendar Event, which is retrieved thorugh an Ajax call
        in the Calendar component. Now, it returns the data in a presentable manner, which makes css styling a breeze. The .map method retrieves the parameters
        for all the Calendar Events. */
@@ -54,7 +55,9 @@ const Events = (props) => {
           setAllYears([year])
         } else if(allYears.includes(year) === true) {
         } else {
-          setAllYears([year, ...allYears])
+          let allTheYears = [year, ...allYears];
+          allTheYears.sort((a,b) => b-a);
+          setAllYears(allTheYears)
         }
       }
       /* If the events' start time is later than today, it will return the events */
@@ -106,8 +109,8 @@ const Events = (props) => {
     return (
       <div className="events">
         <div className="flex center basePad buttons" style={{paddingBottom: '2rem'}}>
-          <div className="button" onClick={(()=>setPastEvents(false))}><h3>Upcoming</h3></div>
-          <div className="button" onClick={(()=>setPastEvents(true))}><h3>Past</h3></div>
+          <div className={`button ${pastEvents === false ? "active" : ""}`} onClick={(()=>setPastEvents(false))}><h3>Upcoming</h3></div>
+          <div className={`button ${pastEvents === true ? "active" : ""}`} onClick={(()=>setPastEvents(true))}><h3>Past</h3></div>
         </div>
         <FadeInWrapper id="chooseYearButtons">
           <div className="flex center buttons wrap" style={{paddingTop: 0}}>
@@ -115,7 +118,7 @@ const Events = (props) => {
             allYears.map(x=>{
               // filter out future years
               if(x <= new Date().getFullYear()){
-                  return (<div key={x} className="button" onClick={(()=>setPastYear(x))}><h3>{`${x}`}</h3></div>)
+                  return (<div key={x} className={`button ${x === pastYear ? "active" : ""}`} onClick={(()=>setPastYear(x))}><h3>{`${x}`}</h3></div>)
               } else {
                 ''
               }

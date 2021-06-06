@@ -40,9 +40,14 @@
             font-size: 0.9rem;
           }
         }
+        h2 {
+          @media screen and (max-width: 768px) {
+            font-size: 1.4rem;
+          }
+        }
         .timeContainer {
           align-self: center;
-          padding-right: 3rem;
+          padding-right: 2.5rem;
           @media screen and (max-width: 768px){
             align-self: flex-start;
           }
@@ -57,7 +62,6 @@
             }
           }
           .cancelled {
-            text-decoration: line-through;
             color: darken($secondary-font-color, 25%);
           }
         }
@@ -81,6 +85,12 @@
         &:hover {
           box-shadow: 0 0 0 0;
           border-bottom: 1px solid $action-color;
+        }
+      }
+      .active {
+        border-bottom: 1px solid $action-color;
+        h3 {
+          color: $action-color;
         }
       }
       .eventButton {

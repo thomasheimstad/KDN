@@ -7,6 +7,7 @@ const Engbio = (props) => {
       <p>In the season 21/22, Kari will debut the roles Siébel (Faust) with conductor Marie Jacquot, Zerlina (Don Giovanni) with conductor Julia Jones and Arbate (Mitridate) with conductor Lars Ulrik Mortensen. In 2021 Kari was awarded the Reumert talent prize.</p>
       <p>Kari made her opera debut as Cherubino (Le nozze di Figaro) with Concerto Copenhagen conducted by Alexis Kossenko at RDO in 2018, receiving excellent reviews in Danish and International press. At RDO she has performed Dorabella (Così fan tutte), Mercédès (Carmen), Emilia (Otello), Maddalena (Rigoletto), Agnes (Intet) and Blumenmädchen (Parsifal), amongst other roles.</p>
       <p>She has worked with international conductors such as Paolo Carignani, Pier Giorgio Morandi, Alexander Vedernikov, Michael Boder, Nikolaj Szeps-Znaider and Giordano Bellincampi.</p>
+      <p>In addition, Kari has an extended interest in the Lied repertoire, with a specialization in the life and music of Edvard Grieg.</p>
     </div>
   )
 }

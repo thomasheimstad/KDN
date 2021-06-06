@@ -2,13 +2,13 @@ module.exports = {
   siteTitle: "Kari Dahl Nielsen", // Site title.
   siteTitleShort: "KDN Mezzo", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: "Homepage Mezzosoprano Kari Dahl Nielsen", // Alternative site title for SEO.
-  siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
-  siteUrl: "localhost:8000", // Domain of your website without pathPrefix.
+  siteLogo: "/logos/logo-512x512.png", // Logo used for SEO and manifest.
+  siteUrl: "https://karidahlnielsen.com", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: "The homepage of mezzosoprano Kari Dahl Nielsen", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "", // FB Application ID for using app insights
-  googleAnalyticsID: "UA-162614133-1", // GA tracking ID.
+  googleAnalyticsID: "", // GA tracking ID.
   disqusShortname: "", // Disqus shortname.
   postDefaultCategoryID: "Tech", // Default category for posts.
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
