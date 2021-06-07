@@ -6,7 +6,7 @@ module.exports = {
       summary: `Mezzo soprano at the Royal Danish Opera`,
     },
     description: `Mezzo soprano Kari Dahl Nielsen's website.`,
-    siteUrl: `https://www.karidahlnielsen.com/`,
+    siteUrl: `https://www.karidahlnielsen.com`,
   },
   flags: {
     PRESERVE_WEBPACK_CACHE: true,
@@ -59,7 +59,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://www.karidahlnielsen.com',
-        sitemap: 'https://www.karidahlnielsen.com/sitemap.xml',
+        sitemap: 'https://www.karidahlnielsen.com/sitemap/sitemap-index.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
