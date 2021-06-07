@@ -6,7 +6,7 @@ module.exports = {
       summary: `Mezzo soprano at the Royal Danish Opera`,
     },
     description: `Mezzo soprano Kari Dahl Nielsen's website.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://www.karidahlnielsen.com/`,
   },
   flags: {
     PRESERVE_WEBPACK_CACHE: true,
@@ -54,6 +54,15 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.karidahlnielsen.com',
+        sitemap: 'https://www.karidahlnielsen.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -135,8 +144,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Kari Dal Nielsen`,
+        short_name: `KDN`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
