@@ -55,11 +55,12 @@
       cursor: pointer;
       background: rgba($base-background-color,0.5);
       border-radius: 5px;
+      padding: 0;
       &:hover p {
         color: darken($action-color, 25%);
       }
       p {
-        padding: 0.2rem 1rem;
+        padding: 1rem 1.5rem;
         margin: 0;
         transition: $base-in-timing $base-in-duration;
       }
